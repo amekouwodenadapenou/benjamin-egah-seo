@@ -686,14 +686,14 @@ textarea.inp{resize:vertical;min-height:84px}
             <div class="cal-sub">Rendez-vous de 30 minutes, du lundi au vendredi, réservables jusqu’à 3 mois à l’avance. Horaires en heure de Lomé (GMT).</div>
             <div class="slots" id="cal-slots"></div>
           </div>
-          <form id="rdv-form" name="rdv" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" style="flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:16px">
-            <input type="hidden" name="form-name" value="rdv">
+          <form id="rdv-form" name="rdv" method="POST" action="https://formspree.io/f/xnpdwwll" style="flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:16px">
+            <input type="hidden" name="_subject" value="Nouveau rendez-vous SEO">
             <input type="hidden" name="date" id="f-date">
             <input type="hidden" name="heure" id="f-heure">
             <input type="hidden" name="creneau" id="f-creneau">
             <input type="hidden" name="subject" id="f-subject" value="Nouveau rendez-vous SEO">
             <input type="hidden" name="duree" value="30 minutes">
-            <p hidden><label>Ne pas remplir : <input name="bot-field"></label></p>
+            <input type="hidden" name="_replyto" id="f-email-reply">
             <div class="stp"><span class="n">2</span>Vos coordonnées</div>
             <div class="row">
               <div class="fld"><label for="f-name"data-i18n="lbl-name">Nom complet</label><input id="f-name" name="nom" class="inp" type="text" autocomplete="name" placeholder="Votre nom"></div>
@@ -871,7 +871,7 @@ textarea.inp{resize:vertical;min-height:84px}
     var btn=$('f-sub'); btn.disabled=true; btn.textContent='Envoi en cours…';
     $('wa-fallback').hidden=true;
     $('f-subject').value='Rendez-vous SEO : '+name+' – '+cal(st.off,st.date,st.time).summary;
-    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(form)).toString()})
+    fetch('https://formspree.io/f/xnpdwwll',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(form)).toString()})
       .then(function(r){
         if(!r.ok){throw new Error('http '+r.status);}
         $('done-t').textContent='Merci '+name.split(/\s+/)[0]+' !';
