@@ -342,22 +342,22 @@ textarea.inp{resize:vertical;min-height:84px}
                 <div class="hx-scr mn-s">
                   <div class="mn-bar"><span class="mn-dot" style="background:#000000"></span><span class="mn-dot" style="background:#EE9822"></span><span class="mn-dot" style="background:#bdbdbd"></span><span class="mn-url">google.com/search?q=consultant+seo</span></div>
                   <div class="mn-top"><span class="mn-logo"><b style="color:#000000">G</b><b style="color:#EE9822">o</b><b style="color:#000000">o</b><b style="color:#000000">g</b><b style="color:#EE9822">l</b><b style="color:#000000">e</b></span>
-                    <span class="mn-q"><span class="mn-qt">consultant seo</span></span></div>
+                    <span class="mn-q"><span class="mn-qt" data-i18n="mock-search">consultant seo</span></span></div>
                   <div class="mn-list">
-                    <div class="mn-r mn-r1"><u>www.agence-exemple.com</u><b>Agence web et SEO, devis rapide</b><i>Création de sites et référencement pour entreprises.</i></div>
-                    <div class="mn-r mn-r3"><u>www.annuaire-seo.com</u><b>Annuaire des consultants SEO</b><i>Comparez les prestataires et leurs tarifs.</i></div>
-                    <div class="mn-r mn-r2 mn-me"><u>Benjamin EGAH · Consultant SEO</u><b>Consultant SEO, audit gratuit de votre site</b><i>Plus de visibilité, plus d’appels et de messages WhatsApp.</i></div>
+                    <div class="mn-r mn-r1"><u>www.agence-exemple.com</u><b data-i18n="mock-result1-title">Agence web et SEO, devis rapide</b><i data-i18n="mock-result1-desc">Création de sites et référencement pour entreprises.</i></div>
+                    <div class="mn-r mn-r3"><u>www.annuaire-seo.com</u><b data-i18n="mock-result2-title">Annuaire des consultants SEO</b><i data-i18n="mock-result2-desc">Comparez les prestataires et leurs tarifs.</i></div>
+                    <div class="mn-r mn-r2 mn-me"><u>Benjamin EGAH · Consultant SEO</u><b data-i18n="mock-result3-title">Consultant SEO, audit gratuit de votre site</b><i data-i18n="mock-result3-desc">Plus de visibilité, plus d’appels et de messages WhatsApp.</i></div>
                   </div>
-                  <span class="mn-k">N°1 sur Google</span>
+                  <span class="mn-k" data-i18n="mock-rank">N°1 sur Google</span>
                   <div class="hx-gl"></div>
                 </div>
               </div>
 
               <div class="hx-d hx-tab"><div class="hx-bk"></div>
                 <div class="hx-scr tb-s">
-                  <div class="tb-h"><span>Trafic Google</span><em>30 jours</em></div>
+                  <div class="tb-h"><span data-i18n="mock-traffic-title">Trafic Google</span><em data-i18n="mock-traffic-period">30 jours</em></div>
                   <div class="tb-n"><span class="tb-k"></span><span class="tb-p"> %</span></div>
-                  <div class="tb-sub">visites depuis la recherche</div>
+                  <div class="tb-sub" data-i18n="mock-traffic-subtitle">visites depuis la recherche</div>
                   <div class="tb-ch"><i style="--h:22%;--d:0s"></i><i style="--h:30%;--d:.12s"></i><i style="--h:38%;--d:.24s"></i><i style="--h:52%;--d:.36s"></i><i style="--h:66%;--d:.48s"></i><i style="--h:80%;--d:.6s"></i><i style="--h:100%;--d:.72s"></i></div>
                   <div class="hx-gl"></div>
                 </div>
@@ -369,9 +369,9 @@ textarea.inp{resize:vertical;min-height:84px}
                     <span class="ph-pin"><span class="ph-ring"></span><span class="ph-dot"></span></span></div>
                   <div class="ph-nt"></div>
                   <div class="ph-sheet">
-                    <b class="ph-t">Votre entreprise</b>
+                    <b class="ph-t" data-i18n="mock-business-name">Votre entreprise</b>
                     <span class="ph-st"><span style="color:#EE9822">★★★★★</span> 4,9</span>
-                    <div class="ph-btn"><span class="ph-call">Appeler</span><span class="ph-wa">WhatsApp</span></div>
+                    <div class="ph-btn"><span class="ph-call" data-i18n="mock-business-call">Appeler</span><span class="ph-wa" data-i18n="mock-business-wa">WhatsApp</span></div>
                   </div>
                   <div class="hx-gl"></div>
                 </div>
@@ -713,7 +713,7 @@ textarea.inp{resize:vertical;min-height:84px}
                 <option value="Autre">Autre</option>
               </select>
             </div>
-            <div class="fld"><label for="f-msg"data-i18n="lbl-msg">Message (facultatif)</label><textarea id="f-msg" name="message" class="inp" rows="3" placeholder="Parlez-moi de votre activité et de vos objectifs."></textarea></div>
+            <div class="fld"><label for="f-msg" data-i18n="lbl-msg">Message (facultatif)</label><textarea id="f-msg" name="message" class="inp" rows="3" data-i18n-placeholder="msg-placeholder" placeholder="Parlez-moi de votre activité et de vos objectifs."></textarea></div>
             <div class="pick" id="pick">Aucun créneau choisi pour l’instant.</div>
             <div class="err" id="f-err" role="alert"></div>
             <a class="wa" id="wa-fallback" href="#" target="_blank" rel="noopener" hidden>Écrire sur WhatsApp</a>
@@ -723,9 +723,9 @@ textarea.inp{resize:vertical;min-height:84px}
         </div>
         <div class="done" id="rdv-done" hidden>
           <div class="ok"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
-          <h3 id="done-t" style="margin:0;font-family:'Libre Baskerville',Georgia,serif;font-size:28px;font-weight:700">Merci !</h3>
+          <h3 id="done-t" style="margin:0;font-family:'Libre Baskerville',Georgia,serif;font-size:28px;font-weight:700" data-i18n="done-thanks">Merci !</h3>
           <p id="done-p" style="margin:0;font-size:17px;line-height:1.6;max-width:30em"></p>
-          <a class="wa" id="wa-done" href="#" target="_blank" rel="noopener">Envoyer aussi sur WhatsApp</a>
+          <a class="wa" id="wa-done" href="#" target="_blank" rel="noopener" data-i18n="btn-wa-done">Envoyer aussi sur WhatsApp</a>
           <button type="button" class="sub2" id="done-again"data-i18n="btn-modify">Modifier ma demande</button>
         </div>
       </div>
@@ -745,23 +745,23 @@ textarea.inp{resize:vertical;min-height:84px}
           <p style="margin:0;font-size:15px;line-height:1.6"data-i18n="footer-tagline">Consultant SEO. Je vous aide à être trouvé sur Google par vos clients, où qu’ils soient.</p>
         </div>
         <div style="flex:0 1 200px;min-width:0;display:flex;flex-direction:column;gap:10px;font-size:15px">
-          <div style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#ffedd7;font-weight:600;padding-bottom:4px">Services</div>
-          <a class="fl" href="#services" style="text-decoration:none;color:#e3d0b6">Audit SEO</a>
-          <a class="fl" href="#services" style="text-decoration:none;color:#e3d0b6">SEO local et Google Maps</a>
-          <a class="fl" href="#services" style="text-decoration:none;color:#e3d0b6">Contenu et mots-clés</a>
-          <a class="fl" href="#services" style="text-decoration:none;color:#e3d0b6">SEO technique</a>
+          <div style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#ffedd7;font-weight:600;padding-bottom:4px" data-i18n="footer-services">Services</div>
+          <a class="fl" href="#services" style="text-decoration:none;color:#e3d0b6" data-i18n="svc1-title">Audit SEO</a>
+          <a class="fl" href="#services" style="text-decoration:none;color:#e3d0b6" data-i18n="svc2-title">SEO local et Google Maps</a>
+          <a class="fl" href="#services" style="text-decoration:none;color:#e3d0b6" data-i18n="svc3-title">Contenu et mots-clés</a>
+          <a class="fl" href="#services" style="text-decoration:none;color:#e3d0b6" data-i18n="svc4-title">SEO technique et mobile</a>
         </div>
         <div style="flex:0 1 260px;min-width:0;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.5">
-          <div style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#ffedd7;font-weight:600;padding-bottom:4px">Contact</div>
-          <spandata-i18n="footer-location">Basé à Lomé, Togo</span>
+          <div style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#ffedd7;font-weight:600;padding-bottom:4px" data-i18n="footer-contact">Contact</div>
+          <span data-i18n="footer-location">Basé à Lomé, Togo</span>
           <a href="https://wa.me/27783871119" target="_blank" rel="noopener" class="fl" style="text-decoration:none;color:#e3d0b6">+27 78 387 1119</a>
           <a href="mailto:j7881863@gami.com" class="fl" style="text-decoration:none;color:#e3d0b6">j7881863@gami.com</a>
-          <spandata-i18n="footer-hours">Lun – Ven, 8h – 18h</span>
+          <span data-i18n="footer-hours">Lun – Ven, 8h – 18h</span>
         </div>
       </div>
       <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;padding-top:24px;border-top:1px solid #40372e;font-size:14px;color:#b9a58b">
-        <span>© 2026 Benjamin EGAH. Tous droits réservés.</span>
-        <spandata-i18n="footer-legal">Mentions légales · Politique de confidentialité</span>
+        <span data-i18n="footer-copy">© 2026 Benjamin EGAH. Tous droits réservés.</span>
+        <span data-i18n="footer-legal">Mentions légales · Politique de confidentialité</span>
       </div>
     </div>
   </div>
@@ -836,20 +836,26 @@ textarea.inp{resize:vertical;min-height:84px}
       sl.appendChild(b);
     });
     var ready=!!(st.date&&st.time);
-    $('pick').textContent=ready?('Créneau choisi : '+c.summary):'Aucun créneau choisi pour l’instant.';
+    var lang=window.i18nLang?window.i18nLang():’fr’;
+    var T=window.i18nT||{};
+    function t(k){return (T[k]&&T[k][lang])||’’;}
+    $(‘pick’).textContent=ready?(t(‘slot-chosen’)+c.summary):t(‘pick-empty’);
     $('f-date').value=st.date; $('f-heure').value=st.time; $('f-creneau').value=ready?c.summary:'';
     if(keep){var el=document.querySelector('[data-k="'+keep+'"]'); if(el&&!el.disabled){el.focus();}}
   }
   function waLink(){
+    var lang=window.i18nLang?window.i18nLang():'fr';
+    var T=window.i18nT||{};
+    function t(k){return (T[k]&&T[k][lang])||'';}
     var v=function(id){return $(id).value.trim();};
-    var L=['Bonjour, je souhaite un rendez-vous pour un audit SEO.'];
-    var sm=cal(st.off,st.date,st.time).summary; if(sm){L.push('Créneau : '+sm);}
-    if(v('f-name')){L.push('Nom : '+v('f-name'));}
-    L.push('Besoin : '+$('f-need').value);
-    if(v('f-phone')){L.push('Téléphone : '+v('f-phone'));}
-    if(v('f-email')){L.push('E-mail : '+v('f-email'));}
-    if(v('f-site')){L.push('Site : '+v('f-site'));}
-    if(v('f-msg')){L.push('Message : '+v('f-msg'));}
+    var L=[t('wa-hello')];
+    var sm=cal(st.off,st.date,st.time).summary; if(sm){L.push(t('wa-slot')+sm);}
+    if(v('f-name')){L.push(t('wa-name')+v('f-name'));}
+    L.push(t('wa-need')+$('f-need').value);
+    if(v('f-phone')){L.push(t('wa-phone')+v('f-phone'));}
+    if(v('f-email')){L.push(t('wa-email')+v('f-email'));}
+    if(v('f-site')){L.push(t('wa-site')+v('f-site'));}
+    if(v('f-msg')){L.push(t('wa-msg')+v('f-msg'));}
     return 'https://wa.me/27783871119?text='+encodeURIComponent(L.join('\n'));
   }
   function mine(){try{var o=JSON.parse(localStorage.getItem('rdv_booked')||'null');if(o&&o.date>=cal(0,'','').today){return o;}}catch(e){}return null;}
@@ -859,32 +865,35 @@ textarea.inp{resize:vertical;min-height:84px}
   var form=$('rdv-form');
   form.addEventListener('submit',function(e){
     e.preventDefault();
-    var ready=!!(st.date&&st.time), name=$('f-name').value.trim(), mail=$('f-email').value.trim(), err='';
-    if(!ready){err='Choisissez un jour et un horaire.';}
-    else if(!name){err='Indiquez votre nom.';}
-    else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)){err='Indiquez une adresse e-mail valide.';}
-    if(!err&&BOOKED.indexOf(st.date+' '+st.time)>=0){err='Ce créneau vient d’être pris. Choisissez-en un autre.';st.time='';render();}
+    var ready=!!(st.date&&st.time), name=$(‘f-name’).value.trim(), mail=$(‘f-email’).value.trim(), err=’’;
+    var lang=window.i18nLang?window.i18nLang():’fr’;
+    var T=window.i18nT||{};
+    function t(k){return (T[k]&&T[k][lang])||’’;}
+    if(!ready){err=t(‘err-no-slot’);}
+    else if(!name){err=t(‘err-no-name’);}
+    else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)){err=t(‘err-bad-email’);}
+    if(!err&&BOOKED.indexOf(st.date+’ ‘+st.time)>=0){err=t(‘err-slot-taken’);st.time=’’;render();}
     var prev=mine();
-    if(!err&&prev){err='Vous avez déjà un rendez-vous de 30 minutes : '+prev.label+'. Pour le modifier, écrivez-moi sur WhatsApp.';$('wa-fallback').href=waLink();$('wa-fallback').hidden=false;}
-    $('f-err').textContent=err;
+    if(!err&&prev){err=t(‘err-already-booked’)+prev.label+t(‘err-already-booked-suffix’);$(‘wa-fallback’).href=waLink();$(‘wa-fallback’).hidden=false;}
+    $(‘f-err’).textContent=err;
     if(err){return;}
-    var btn=$('f-sub'); btn.disabled=true; btn.textContent='Envoi en cours…';
-    $('wa-fallback').hidden=true;
-    $('f-subject').value='Rendez-vous SEO : '+name+' – '+cal(st.off,st.date,st.time).summary;
+    var btn=$(‘f-sub’); btn.disabled=true; btn.textContent=t(‘sending’);
+    $(‘wa-fallback’).hidden=true;
+    $(‘f-subject’).value=t(‘rdv-subject’)+name+’ – ‘+cal(st.off,st.date,st.time).summary;
     fetch('https://formspree.io/f/xnpdwwll',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(form)).toString()})
       .then(function(r){
         if(!r.ok){throw new Error('http '+r.status);}
-        $('done-t').textContent='Merci '+name.split(/\s+/)[0]+' !';
-        $('done-p').textContent='Créneau choisi : '+cal(st.off,st.date,st.time).summary+'. Votre rendez-vous dure 30 minutes. Je reviens vers vous très vite pour le confirmer.';
-        try{localStorage.setItem('rdv_booked',JSON.stringify({date:st.date,time:st.time,label:cal(st.off,st.date,st.time).summary}));}catch(e){}
-        $('wa-done').href=waLink();
-        $('rdv-wrap').hidden=true; $('rdv-done').hidden=false;
-        btn.disabled=false; btn.textContent='Confirmer ma demande';
+        $(‘done-t’).textContent=t(‘done-name’)+name.split(/\s+/)[0]+’ !’;
+        $(‘done-p’).textContent=t(‘done-slot’)+cal(st.off,st.date,st.time).summary+t(‘done-body-suffix’);
+        try{localStorage.setItem(‘rdv_booked’,JSON.stringify({date:st.date,time:st.time,label:cal(st.off,st.date,st.time).summary}));}catch(e){}
+        $(‘wa-done’).href=waLink();
+        $(‘rdv-wrap’).hidden=true; $(‘rdv-done’).hidden=false;
+        btn.disabled=false; btn.textContent=t(‘btn-submit’);
       })
       .catch(function(){
-        $('f-err').textContent='L’envoi a échoué. Confirmez votre demande directement sur WhatsApp.';
-        $('wa-fallback').href=waLink(); $('wa-fallback').hidden=false;
-        btn.disabled=false; btn.textContent='Confirmer ma demande';
+        $(‘f-err’).textContent=t(‘err-send-failed’);
+        $(‘wa-fallback’).href=waLink(); $(‘wa-fallback’).hidden=false;
+        btn.disabled=false; btn.textContent=t(‘btn-submit’);
       });
   });
   $('done-again').addEventListener('click',function(){$('rdv-done').hidden=true;$('rdv-wrap').hidden=false;});

@@ -128,8 +128,7 @@
     /* Footer */
     'footer-tagline':   { fr: 'Consultant SEO. Je vous aide à être trouvé sur Google par vos clients, où qu\'ils soient.', en: 'SEO Consultant. I help your customers find you on Google, wherever they are.' },
     'footer-services':  { fr: 'Services', en: 'Services' },
-    'footer-contact':   { fr: 'Contact', en: 'Contact' },
-    'footer-location':  { fr: 'Basé à Lomé, Togo', en: 'Based in Lomé, Togo' },
+    'footer-contact':   { fr: 'Contact', en: 'Contact' },    'footer-location':  { fr: 'Basé à Lomé, Togo', en: 'Based in Lomé, Togo' },
     'footer-hours':     { fr: 'Lun – Ven, 8h – 18h', en: 'Mon – Fri, 8am – 6pm' },
     'footer-legal':     { fr: 'Mentions légales · Politique de confidentialité', en: 'Legal notice · Privacy policy' },
     'footer-copy':      { fr: '© 2026 Benjamin EGAH. Tous droits réservés.', en: '© 2026 Benjamin EGAH. All rights reserved.' },
@@ -141,6 +140,47 @@
     'ticker1':          { fr: 'Audit SEO gratuit de votre site, sans engagement.', en: 'Free SEO audit of your site, no commitment.' },
     'ticker2':          { fr: 'Rendez-vous de 30 minutes, sans engagement.', en: '30-minute appointment, no commitment.' },
     'ticker-cta':       { fr: 'Réserver mon créneau', en: 'Book my slot' },
+
+    'msg-placeholder':  { fr: "Parlez-moi de votre activité et de vos objectifs.", en: "Tell me about your business and your goals." },
+
+    /* Calendrier JS - textes dynamiques */
+    'slot-chosen':      { fr: 'Créneau choisi : ', en: 'Slot chosen: ' },
+    'sending':          { fr: 'Envoi en cours…', en: 'Sending…' },
+    'done-name':        { fr: 'Merci ', en: 'Thank you ' },
+    'done-slot':        { fr: 'Créneau choisi : ', en: 'Slot chosen: ' },
+    'done-body-suffix': { fr: '. Votre rendez-vous dure 30 minutes. Je reviens vers vous très vite pour le confirmer.', en: '. Your appointment lasts 30 minutes. I will get back to you very soon to confirm it.' },
+    'err-no-slot':      { fr: 'Choisissez un jour et un horaire.', en: 'Please choose a day and time.' },
+    'err-no-name':      { fr: 'Indiquez votre nom.', en: 'Please enter your name.' },
+    'err-bad-email':    { fr: 'Indiquez une adresse e-mail valide.', en: 'Please enter a valid email address.' },
+    'err-slot-taken':   { fr: 'Ce créneau vient d\'être pris. Choisissez-en un autre.', en: 'This slot was just taken. Please choose another one.' },
+    'err-already-booked': { fr: 'Vous avez déjà un rendez-vous de 30 minutes : ', en: 'You already have a 30-minute appointment: ' },
+    'err-already-booked-suffix': { fr: '. Pour le modifier, écrivez-moi sur WhatsApp.', en: '. To change it, write to me on WhatsApp.' },
+    'err-send-failed':  { fr: 'L\'envoi a échoué. Confirmez votre demande directement sur WhatsApp.', en: 'Sending failed. Please confirm your request directly on WhatsApp.' },
+    'wa-hello':         { fr: 'Bonjour, je souhaite un rendez-vous pour un audit SEO.', en: 'Hello, I would like to book an appointment for a free SEO audit.' },
+    'wa-slot':          { fr: 'Créneau : ', en: 'Slot: ' },
+    'wa-name':          { fr: 'Nom : ', en: 'Name: ' },
+    'wa-need':          { fr: 'Besoin : ', en: 'Need: ' },
+    'wa-phone':         { fr: 'Téléphone : ', en: 'Phone: ' },
+    'wa-email':         { fr: 'E-mail : ', en: 'Email: ' },
+    'wa-site':          { fr: 'Site : ', en: 'Site: ' },
+    'wa-msg':           { fr: 'Message : ', en: 'Message: ' },
+    'rdv-subject':      { fr: 'Rendez-vous SEO : ', en: 'SEO Appointment: ' },
+
+    /* Hero Card - Mockups */
+    'mock-search':      { fr: 'consultant seo', en: 'seo consultant' },
+    'mock-result1-title': { fr: 'Agence web et SEO, devis rapide', en: 'Web & SEO Agency, quick quote' },
+    'mock-result1-desc': { fr: 'Création de sites et référencement pour entreprises.', en: 'Website creation and SEO for businesses.' },
+    'mock-result2-title': { fr: 'Annuaire des consultants SEO', en: 'SEO Consultants Directory' },
+    'mock-result2-desc': { fr: 'Comparez les prestataires et leurs tarifs.', en: 'Compare providers and their rates.' },
+    'mock-result3-title': { fr: 'Consultant SEO, audit gratuit de votre site', en: 'SEO Consultant, free site audit' },
+    'mock-result3-desc': { fr: 'Plus de visibilité, plus d\'appels et de messages WhatsApp.', en: 'More visibility, more calls and WhatsApp messages.' },
+    'mock-rank':        { fr: 'N°1 sur Google', en: '#1 on Google' },
+    'mock-traffic-title': { fr: 'Trafic Google', en: 'Google Traffic' },
+    'mock-traffic-period': { fr: '30 jours', en: '30 days' },
+    'mock-traffic-subtitle': { fr: 'visites depuis la recherche', en: 'visits from search' },
+    'mock-business-name': { fr: 'Votre entreprise', en: 'Your business' },
+    'mock-business-call': { fr: 'Appeler', en: 'Call' },
+    'mock-business-wa': { fr: 'WhatsApp', en: 'WhatsApp' },
   };
 
   function apply(lang){
@@ -156,6 +196,13 @@
         } else {
           el.innerHTML = T[key][lang];
         }
+      }
+    });
+    /* Gérer les placeholders séparés (data-i18n-placeholder) */
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){
+      var key = el.getAttribute('data-i18n-placeholder');
+      if(T[key] && T[key][lang] !== undefined){
+        el.placeholder = T[key][lang];
       }
     });
     /* Mettre à jour les placeholders du calendrier JS */
@@ -174,6 +221,10 @@
 
   /* Initialiser au chargement */
   document.addEventListener('DOMContentLoaded', function(){ apply(LANG); });
+
+  /* Exposer les traductions et la langue pour le JS du calendrier */
+  window.i18nT = T;
+  window.i18nLang = function(){ return LANG; };
 
   /* Exposer pour le bouton */
   window.toggleLang = function(){
