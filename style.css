@@ -1,0 +1,347 @@
+/* ===== Variables ===== */
+:root {
+  --void: #100904;
+  --bone: #ffffff;
+  --ash: #9a9a9a;
+  --silver: #bdbdbd;
+  --accent: #EE9822;
+  --accent-dark: #c97c0c;
+  --accent-glow: rgba(238, 152, 34, 0.6);
+  --spacing-xs: 12px;
+  --spacing-sm: 24px;
+  --spacing-md: 48px;
+  --spacing-lg: 96px;
+  --radius-sm: 12px;
+  --radius-pill: 9999px;
+}
+
+/* ===== Base ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--bone);
+  background: var(--void);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ===== Typography ===== */
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+h1 {
+  font-size: clamp(48px, 8vw, 78px);
+}
+
+h2 {
+  font-size: clamp(36px, 5vw, 48px);
+}
+
+h3 {
+  font-size: 24px;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 0;
+}
+
+/* ===== Skip Link ===== */
+.skip {
+  position: absolute;
+  left: 12px;
+  top: -120px;
+  z-index: 200;
+  background: var(--bone);
+  color: var(--void);
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 14px;
+  transition: top 0.2s ease;
+}
+
+.skip:focus-visible {
+  top: 12px;
+}
+
+/* ===== Animations ===== */
+@keyframes rise {
+  from {
+    opacity: 0;
+    translate: 0 30px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes prog {
+  from {
+    scale: 0 1;
+  }
+  to {
+    scale: 1 1;
+  }
+}
+
+.prog {
+  display: none;
+}
+
+@supports (animation-timeline: view()) {
+  .rv {
+    animation: rise linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+
+  .prog {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--accent);
+    transform-origin: 0 50%;
+    z-index: 50;
+    animation: prog linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+/* ===== Boutons ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  background: var(--accent);
+  color: var(--void);
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  border: 0;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -8px var(--accent-glow);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* ===== Navigation ===== */
+.nav-link {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  color: var(--ash);
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--bone);
+}
+
+/* ===== Layout ===== */
+.sec {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--spacing-lg) var(--spacing-sm);
+}
+
+/* ===== Cards ===== */
+.card {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--spacing-sm);
+  padding: 32px;
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(238, 152, 34, 0.3);
+}
+
+/* ===== FAQ ===== */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+details {
+  interpolate-size: allow-keywords;
+}
+
+details summary {
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+details summary:hover {
+  color: var(--accent);
+}
+
+details[open] .faq-plus {
+  transform: rotate(45deg);
+}
+
+.faq-plus {
+  transition: transform 0.4s ease;
+}
+
+details::details-content {
+  block-size: 0;
+  overflow: hidden;
+  transition: block-size 0.4s ease, content-visibility 0.4s allow-discrete;
+}
+
+details[open]::details-content {
+  block-size: auto;
+}
+
+/* ===== Formulaire de réservation ===== */
+[hidden] {
+  display: none !important;
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.day, .slot {
+  height: 44px;
+  min-width: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--bone);
+  font: inherit;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.day:hover:not(:disabled), .slot:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: rgba(238, 152, 34, 0.1);
+}
+
+.day.sel, .slot.sel {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--void);
+  font-weight: 600;
+}
+
+.day:disabled, .slot:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.inp {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--bone);
+  font: inherit;
+  font-size: 16px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inp:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+textarea.inp {
+  resize: vertical;
+  min-height: 84px;
+}
+
+.sub {
+  width: 100%;
+  height: 54px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  color: var(--void);
+  font: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sub:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -8px var(--accent-glow);
+}
+
+.sub:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 720px) {
+  .sec {
+    padding: 56px 20px;
+  }
+
+  h1 {
+    font-size: clamp(36px, 10vw, 48px);
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

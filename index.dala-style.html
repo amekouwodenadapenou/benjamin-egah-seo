@@ -1,0 +1,937 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#100904">
+<title>Benjamin EGAH, consultant SEO</title>
+<meta name="description" content="Benjamin EGAH, consultant SEO : audit, SEO local, contenu et suivi pour apparaître en premier sur Google.">
+<meta name="author" content="Benjamin EGAH">
+<meta name="robots" content="index,follow,max-image-preview:large">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Benjamin EGAH">
+<meta property="og:title" content="Benjamin EGAH, consultant SEO">
+<meta property="og:description" content="Audit, SEO local, contenu et suivi pour apparaître en premier sur Google.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Benjamin EGAH, consultant SEO">
+<meta name="twitter:description" content="Audit, SEO local, contenu et suivi pour apparaître en premier sur Google.">
+
+<!-- À COMPLÉTER : remplacez [votre-domaine] par le domaine final (ex. https://benjaminegah.com),
+     puis décommentez. Une URL canonique et une og:image erronées nuisent au référencement. -->
+<!-- <link rel="canonical" href="https://[votre-domaine]/"> -->
+<!-- <meta property="og:url" content="https://[votre-domaine]/"> -->
+<!-- <meta property="og:image" content="https://[votre-domaine]/portrait.jpg"> -->
+<!-- <meta name="twitter:image" content="https://[votre-domaine]/portrait.jpg"> -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Benjamin EGAH, consultant SEO",
+  "description": "Consultant SEO : audit, SEO local et Google Maps, contenu et mots-clés, SEO technique, suivi mensuel.",
+  "image": "portrait.jpg",
+  "email": "j7881863@gami.com",
+  "telephone": "+27 78 387 1119",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lomé",
+    "addressCountry": "TG"
+  },
+  "areaServed": ["Togo", "Afrique de l'Ouest"],
+  "founder": {
+    "@type": "Person",
+    "name": "Benjamin EGAH",
+    "jobTitle": "Consultant SEO"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "08:00",
+    "closes": "18:00"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@200;400;600&display=swap">
+<style>
+:root{
+  --void:#100904;
+  --bone:#ffffff;
+  --ash:#9a9a9a;
+  --silver:#bdbdbd;
+  --accent:#EE9822;
+  --accent-dark:#c97c0c;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:'DM Sans',system-ui,sans-serif;font-weight:200;font-size:18px;line-height:1.5;color:var(--bone);background:var(--void)}
+html{scroll-behavior:smooth}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-weight:400;line-height:1.1;letter-spacing:-0.04em}
+h1{font-size:clamp(48px,8vw,78px)}
+h2{font-size:clamp(36px,5vw,48px)}
+h3{font-size:24px;letter-spacing:-0.02em}
+p{margin:0}
+summary::-webkit-details-marker{display:none}
+details[open] .faq-plus{transform:rotate(45deg)}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.skip{position:absolute;left:12px;top:-120px;z-index:200;background:var(--bone);color:var(--void);padding:12px 20px;border-radius:9999px;text-decoration:none;font-weight:600;font-size:14px;transition:top .2s ease}
+.skip:focus-visible{top:12px}
+
+/* ===== Animations ===== */
+details{interpolate-size:allow-keywords}
+@keyframes rise{from{opacity:0;translate:0 30px}to{opacity:1;translate:0 0}}
+@keyframes dropin{from{opacity:0;translate:0 -16px}to{opacity:1;translate:0 0}}
+@keyframes rvup{from{opacity:0;translate:0 44px}to{opacity:1;translate:0 0}}
+@keyframes prog{from{scale:0 1}to{scale:1 1}}
+.prog{display:none}
+@supports (animation-timeline: view()){
+  .rv{animation:rvup linear both;animation-timeline:view();animation-range:entry 0% entry 40%}
+  .prog{display:block;position:fixed;left:0;top:0;width:100%;height:3px;background:var(--accent);transform-origin:0 50%;z-index:50;animation:prog linear both;animation-timeline:scroll(root)}
+}
+
+/* ===== Boutons ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 24px;background:var(--accent);color:var(--void);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:0.025em;border:0;border-radius:9999px;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -8px rgba(238,152,34,.6)}
+.btn:active{transform:translateY(0) scale(.98)}
+
+/* ===== Navigation ===== */
+.nav-link{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:0.025em;color:var(--ash);transition:color .2s ease}
+.nav-link:hover{color:var(--bone)}
+
+/* ===== Sections ===== */
+.sec{max-width:1280px;margin:0 auto;padding:96px 24px;display:flex;flex-direction:column;gap:60px}
+
+/* ===== Cartes épurées ===== */
+.card{background:transparent;border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:32px;transition:transform .4s ease,border-color .4s ease}
+.card:hover{transform:translateY(-4px);border-color:rgba(238,152,34,.3)}
+
+.faq-plus{transition:transform .4s ease}
+details summary{cursor:pointer;font-weight:600;transition:color .2s ease}
+details summary:hover{color:var(--accent)}
+details::details-content{block-size:0;overflow:hidden;transition:block-size .4s ease,content-visibility .4s allow-discrete}
+details[open]::details-content{block-size:auto}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+}
+
+/* ===== Mobile ===== */
+@media (max-width:720px){
+  .sec{padding-top:56px !important;padding-bottom:56px !important;gap:32px !important}
+  .secf{padding-top:48px !important;padding-bottom:24px !important;gap:32px !important}
+  .hd{padding:16px 0 !important;gap:12px 16px !important}
+  .hd nav{width:100%;flex-wrap:nowrap !important;overflow-x:auto;gap:22px !important;white-space:nowrap;scrollbar-width:none;margin-right:-24px;padding-right:24px}
+  .hd nav::-webkit-scrollbar{display:none}
+  .hd nav a{flex:none}
+  .hd nav .btn{order:-1;padding:10px 18px !important}
+  .hin{padding:20px 0 56px !important;gap:32px !important}
+  .ht{gap:18px !important}
+  .ht .btn,#portfolio .btn,#contact .btn{display:block;width:100%;box-sizing:border-box;text-align:center}
+  .ap{height:380px !important;flex:none !important;width:100% !important}
+  .st{flex:1 1 40% !important;border-left:0 !important;padding:0 16px 0 0 !important}
+  .bn{font-size:40px !important}
+  .pad{padding:24px 20px !important}
+  .fl{padding:6px 0}
+  .ht a:not(.btn),.lnk{padding-top:10px !important;padding-bottom:10px !important}
+  details summary{font-size:17px !important}
+}
+@media (hover:none){
+  .card:hover,.btn:hover{transform:none;box-shadow:none}
+  .card:hover .ico{background:#000000 !important;color:var(--acc) !important;transform:none}
+  .rv:hover .num{background:#000000 !important;color:var(--acc) !important;transform:none}
+  details summary:hover{padding-left:0}
+}
+
+/* ===== Contact et rendez-vous ===== */
+[hidden]{display:none !important}
+.stp{display:flex;align-items:center;gap:12px;font-size:18px;font-weight:700}
+.stp .n{flex:none;width:30px;height:30px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#000000;color:var(--acc);font-family:'Libre Baskerville',Georgia,serif;font-size:15px}
+.cal-h{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.cal-m{font-size:18px;font-weight:600;text-transform:capitalize;text-align:center}
+.cal-nav{width:44px;height:44px;border:1px solid rgba(255,255,255,.15);background:transparent;color:var(--bone);border-radius:6px;font-size:22px;line-height:1;cursor:pointer;transition:background-color .2s ease,border-color .2s ease}
+.cal-nav:hover:not(:disabled){background:rgba(238,152,34,.1);border-color:var(--accent)}
+.cal-nav:disabled{opacity:.3;cursor:default}
+.cal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.cal-wd{text-align:center;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#4A4A4A;padding:4px 0}
+.day{height:44px;min-width:0;border:0;border-radius:6px;background:transparent;color:var(--bone);font:inherit;font-size:15px;cursor:pointer;transition:background-color .2s ease,transform .2s ease;border:1px solid rgba(255,255,255,.1)}
+.day:hover:not(:disabled){background:rgba(238,152,34,.1);border-color:var(--accent)}
+.day.today{box-shadow:inset 0 0 0 2px var(--accent)}
+.day.sel{background:var(--accent);color:var(--void);font-weight:600;border-color:var(--accent)}
+.day:disabled{color:var(--ash);cursor:default;opacity:.3}
+.day.blank{visibility:hidden}
+.cal-sub{font-size:14px;color:#4A4A4A}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:8px}
+.slot{height:44px;border:1px solid rgba(255,255,255,.15);background:transparent;color:var(--bone);border-radius:6px;font:inherit;font-size:15px;cursor:pointer;transition:background-color .2s ease,border-color .2s ease,color .2s ease}
+.slot:hover:not(:disabled){border-color:var(--accent);background:rgba(238,152,34,.1)}
+.slot.sel{background:var(--accent);border-color:var(--accent);color:var(--void)}
+.slot:disabled{color:var(--ash);background:transparent;cursor:default;opacity:.3}
+.row{display:flex;flex-wrap:wrap;gap:16px}
+.fld{min-width:0;display:flex;flex-direction:column;gap:6px}
+.row .fld{flex:1 1 180px}
+.fld label{font-size:14px;font-weight:600}
+.inp{width:100%;box-sizing:border-box;padding:12px 14px;border:1px solid rgba(255,255,255,.15);border-radius:12px;background:transparent;color:var(--bone);font:inherit;font-size:16px;line-height:1.4;transition:border-color .2s ease,box-shadow .2s ease}
+.inp:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(238,152,34,.3)}
+textarea.inp{resize:vertical;min-height:84px}
+.pick{font-size:15px;font-weight:600}
+.err{min-height:0;font-size:14px;font-weight:600;color:#B00020}
+.sub{height:54px;border:0;border-radius:9999px;background:var(--accent);color:var(--void);font:inherit;font-size:16px;font-weight:700;cursor:pointer;transition:transform .3s ease,box-shadow .3s ease}
+.sub:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 12px 24px -8px rgba(238,152,34,.6)}
+.sub:disabled{opacity:.6;cursor:default}
+.sub2{height:48px;padding:0 24px;border:1px solid #000000;border-radius:3px;background:#ffffff;color:#000000;font:inherit;font-size:15px;font-weight:600;cursor:pointer}
+.wa{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 24px;border-radius:3px;background:#000000;color:#ffffff;text-decoration:none;font-size:15px;font-weight:600;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s ease}
+.wa:hover{transform:translateY(-3px);box-shadow:0 14px 26px -12px rgba(0,0,0,.55)}
+.wa:focus-visible{outline:3px solid #000000;outline-offset:2px;box-shadow:0 0 0 5px var(--acc)}
+.done{display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding:12px 0}
+.ok{width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--acc)}
+.day:focus-visible,.slot:focus-visible,.cal-nav:focus-visible,.sub:focus-visible,.sub2:focus-visible{outline:3px solid #000000;outline-offset:2px;box-shadow:0 0 0 5px var(--acc)}
+@media (max-width:720px){
+  .bk{padding:20px !important}
+  .stp{font-size:17px}
+}
+
+/* ===== Hero : appareils en mouvement ===== */
+@property --kpi{syntax:'<integer>';inherits:false;initial-value:0}
+.hx-hero{position:relative;overflow:hidden;background:radial-gradient(42% 58% at 96% 0%,rgba(238,152,34,.22),rgba(238,152,34,0) 70%),radial-gradient(62% 88% at 70% 52%,#351f10 0%,#1c1008 46%,#100904 82%)}
+.hx-card{display:flex;align-items:center;gap:14px;margin-top:8px;padding:12px 16px 12px 12px;max-width:380px;border:1px dashed #6c5f51;border-radius:12px;background:rgba(56,36,22,.55)}
+.stgw{position:relative;flex:1 1 440px;min-width:0;max-width:640px;margin:0 auto;container-type:inline-size}
+.stg{position:relative;width:60em;height:58em;margin:0 auto;font-size:10px;font-size:calc(100cqw / 60);perspective:130em;perspective-origin:50% 44%;transform-style:preserve-3d}
+.hx-l{position:absolute;left:0;top:0;width:60em;height:58em;transform-style:preserve-3d;pointer-events:none;animation:hxSway 14s ease-in-out infinite alternate}
+@keyframes hxSway{from{transform:rotateX(5deg) rotateY(-16deg)}to{transform:rotateX(2deg) rotateY(14deg)}}
+.hx-d{position:absolute;transform-style:preserve-3d;box-sizing:border-box;padding:.8em;background:linear-gradient(145deg,#4a4a4a 0%,#0c0c0c 48%,#2e2e2e 100%);animation:hxEnt 1.1s cubic-bezier(.2,.7,.2,1) both,hxFl 7s ease-in-out infinite alternate}
+.hx-d::before{content:"";position:absolute;inset:0;border-radius:inherit;background:#000000;transform:translateZ(-.5em)}
+.hx-bk{position:absolute;inset:0;border-radius:inherit;background:#000000;transform:translateZ(-1em)}
+@keyframes hxEnt{from{scale:.86}to{scale:1}}
+@keyframes hxFl{from{translate:0 0 0}to{translate:0 -1.8em 0}}
+.hx-scr{position:absolute;inset:.8em;border-radius:.9em;overflow:hidden;background:#fff;color:#202124;padding:1.4em;box-sizing:border-box;box-shadow:0 0 0 .35em #0a0a0b}
+.hx-gl{position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.32) 0%,rgba(255,255,255,.08) 34%,rgba(255,255,255,0) 35%,rgba(255,255,255,0) 100%);pointer-events:none}
+.hx-mon{left:12em;top:5em;width:42em;height:27.5em;border-radius:1.8em;animation-delay:.15s,0s}
+.hx-mon::after{content:"";position:absolute;left:11em;top:100%;width:20em;height:7em;margin-top:0;transform:translateZ(-.6em);background:linear-gradient(90deg,#1a1a1a,#4d4d4d 40%,#161616) 7em 0/6em 5.4em no-repeat,linear-gradient(180deg,#EE9822,#c97c0c) 0 5.4em/20em .5em no-repeat,linear-gradient(180deg,#3a3a3a,#0c0c0c) 0 5.9em/20em 1em no-repeat;border-radius:.6em}
+.hx-tab{left:0;top:29em;width:19em;height:27em;border-radius:2.2em;padding:.9em;background:linear-gradient(145deg,#4d4d4d,#0c0c0c 55%,#333333);transform:translateZ(7em) rotateY(14deg);animation-delay:.35s,-2s}
+.hx-tab::before{background:#000000}.hx-tab .hx-bk{background:#000000}
+.hx-tab .hx-scr{inset:.9em;border-radius:1.5em}
+.hx-pho{left:46em;top:32em;width:11.5em;height:23.5em;border-radius:2.8em;padding:.7em;background:linear-gradient(145deg,#4d4d4d,#0c0c0c 52%,#333333);transform:translateZ(11em) rotateY(-12deg);animation-delay:.55s,-4s}
+.hx-pho::before{background:#000000}.hx-pho .hx-bk{background:#000000}
+.hx-pho .hx-scr{inset:.7em;border-radius:2.2em;padding:0}
+/* ordinateur */
+.mn-s{padding:0;background:#fff}
+.mn-bar{display:flex;align-items:center;gap:.6em;height:3em;padding:0 1.2em;background:#f2f2f2}
+.mn-dot{width:.9em;height:.9em;border-radius:50%}
+.mn-url{margin-left:.8em;flex:1;font-size:1.2em;background:#fff;border-radius:1em;padding:.3em 1em;color:#555555;white-space:nowrap;overflow:hidden}
+.mn-top{display:flex;align-items:center;gap:1.6em;padding:1.1em 1.6em .9em;border-bottom:.1em solid #e6e6e6}
+.mn-logo{font-family:'Product Sans','DM Sans',Arial,sans-serif;font-size:2.6em;font-weight:700;letter-spacing:-.02em;line-height:1}
+.mn-q{flex:1;height:2.8em;border-radius:1.4em;border:.1em solid #d9d9d9;box-shadow:0 .1em .4em rgba(0,0,0,.18);display:flex;align-items:center;padding:0 1.2em;font-size:1.4em;color:#202124}
+.mn-qt{display:inline-block;overflow:hidden;white-space:nowrap;width:7.6em;border-right:.1em solid #202124;animation:hxType 9s steps(14,end) infinite}
+@keyframes hxType{0%{width:0}18%,100%{width:7.6em}}
+.mn-list{position:relative;margin:1.1em 1.6em 0;height:15em}
+.mn-r{position:absolute;left:0;right:0;top:0;height:4.6em;display:flex;flex-direction:column;gap:.15em;justify-content:center;padding-left:.9em;border-left:.3em solid transparent;box-sizing:border-box}
+.mn-r u{text-decoration:none;font-size:1.1em;color:#9a5f08;white-space:nowrap;overflow:hidden}
+.mn-r b{font-size:1.5em;font-weight:600;color:#000000;white-space:nowrap;overflow:hidden}
+.mn-r i{font-style:normal;font-size:1.1em;color:#444444;white-space:nowrap;overflow:hidden}
+.mn-me{background:#fff4e0;border-left-color:#ee9822;border-radius:0 .5em .5em 0}
+.mn-r1{animation:hxA 9s ease-in-out infinite}
+.mn-r3{translate:0 5em;animation:hxB 9s ease-in-out infinite}
+.mn-r2{translate:0 10em;animation:hxC 9s ease-in-out infinite}
+@keyframes hxA{0%,38%{translate:0 0}52%,92%{translate:0 5em}100%{translate:0 0}}
+@keyframes hxB{0%,38%{translate:0 5em}52%,92%{translate:0 10em}100%{translate:0 5em}}
+@keyframes hxC{0%,38%{translate:0 10em}52%,92%{translate:0 0}100%{translate:0 10em}}
+.mn-k{position:absolute;right:1.4em;bottom:1.2em;font-size:1.3em;font-weight:700;background:#000000;color:#EE9822;padding:.5em 1em;border-radius:1em;scale:0;animation:hxPop 9s ease-in-out infinite}
+@keyframes hxPop{0%,50%{scale:0}58%,92%{scale:1}100%{scale:0}}
+/* tablette */
+.tb-s{background:linear-gradient(170deg,#262626,#111111 55%,#000000);color:#fff;padding:1.7em}
+.tb-h{white-space:nowrap;display:flex;justify-content:space-between;align-items:center;font-size:1.3em;font-weight:700}
+.tb-h em{font-style:normal;font-size:.9em;font-weight:500;background:rgba(255,255,255,.14);padding:.2em .8em;border-radius:1em}
+.tb-n{margin-top:.9em;white-space:nowrap;font-size:3.5em;font-weight:700;line-height:1;color:#EE9822}
+.tb-k{--kpi:25;counter-reset:k var(--kpi);animation:hxKpi 6s ease-out infinite}
+.tb-k::before{content:"+" counter(k)}
+@keyframes hxKpi{0%{--kpi:0}60%,100%{--kpi:25}}
+.tb-sub{font-size:1.05em;white-space:nowrap;color:#c9c9c9;margin-top:.3em}
+.tb-ch{position:absolute;left:1.7em;right:1.7em;bottom:1.7em;height:9em;display:flex;align-items:flex-end;gap:.8em;border-bottom:.12em solid rgba(255,255,255,.25)}
+.tb-ch i{flex:1;height:var(--h);background:linear-gradient(180deg,#ffffff,#9d9d9d);border-radius:.5em .5em 0 0;transform-origin:50% 100%;animation:hxBar 6s var(--d) ease-out infinite}
+.tb-ch i:last-child{background:linear-gradient(180deg,#F5B04F,#EE9822)}
+@keyframes hxBar{0%{scale:1 0}40%,100%{scale:1 1}}
+/* téléphone */
+.ph-s{background:#f4f4f4}
+.ph-map{position:absolute;inset:0;background:#f1f1f1;overflow:hidden}
+.ph-park{position:absolute;left:-2em;top:3em;width:8em;height:6em;border-radius:1.4em;background:#dcdcdc}
+.ph-lake{position:absolute;right:-2em;top:9em;width:7em;height:5em;border-radius:50%;background:#c4c4c4}
+.ph-rd1{position:absolute;left:-2em;right:-2em;top:7em;height:1.1em;background:#fff;rotate:-14deg}
+.ph-rd2{position:absolute;top:-2em;bottom:-2em;left:5.6em;width:1.1em;background:#EE9822;rotate:8deg}
+.ph-rd3{position:absolute;left:-2em;right:-2em;top:12.5em;height:.9em;background:#fff;rotate:10deg}
+.ph-pin{position:absolute;left:5em;top:6em;width:2em;height:2em}
+.ph-dot{position:absolute;inset:0;border-radius:50% 50% 50% 0;rotate:-45deg;background:#EE9822;box-shadow:inset 0 0 0 .5em #EE9822,inset 0 0 0 .8em #000000}
+.ph-ring{position:absolute;inset:-.4em;border-radius:50%;border:.25em solid #EE9822;animation:hxPulse 2.2s ease-out infinite}
+@keyframes hxPulse{from{scale:1;border-width:.25em}to{scale:3.2;border-width:0}}
+.ph-nt{position:absolute;left:50%;top:.9em;width:3.8em;height:1.1em;margin-left:-1.9em;border-radius:1em;background:#050505}
+.ph-sheet{position:absolute;left:0;right:0;bottom:0;background:#fff;border-radius:1.4em 1.4em 0 0;padding:1.1em 1.1em 1.6em;display:flex;flex-direction:column;gap:.45em}
+.ph-t{font-size:1.25em;font-weight:700}
+.ph-st{font-size:1em;color:#444444}
+.ph-btn{display:flex;flex-direction:column;gap:.5em;margin-top:.4em;font-size:1.05em;font-weight:700;text-align:center}
+.ph-btn span{padding:.6em 0;border-radius:1em}
+.ph-call{background:#000000;color:#ffffff}
+.ph-wa{background:#EE9822;color:#000000;animation:hxNudge 3s ease-in-out infinite}
+@keyframes hxNudge{0%,70%,100%{scale:1}80%{scale:1.07}90%{scale:.98}}
+.stgw::after{content:"";position:absolute;left:8%;right:8%;bottom:1%;height:9%;background:radial-gradient(50% 50% at 50% 50%,rgba(0,0,0,.55),rgba(0,0,0,0) 70%);pointer-events:none}
+@media (max-width:720px){
+  .hx-card{max-width:none}
+  .stgw{flex:1 1 100%}
+}
+/* ===== Barre mobile ===== */
+.mbar,.mbsp{display:none}
+@media (max-width:720px){
+  .mbar{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:rgba(16,9,4,.94);border-top:1px dashed #40372e}
+  .mbar a{flex:1;display:block;text-align:center;text-decoration:none;font-weight:700;font-size:15px;padding:13px 8px;border-radius:3px;min-height:20px}
+  .mbar .mb1{background:var(--acc);color:#000000}
+  .mbar .mb2{background:#000000;color:#ffedd7;border:1px solid #ffedd7}
+  .mbsp{display:block;height:76px}
+  .hx-hero .hin{padding-top:8px !important}
+  .stgw{margin-top:-6px}
+  .mn-r b{font-size:1.6em}
+  .hl{white-space:normal}
+  h1{font-size:clamp(34px,9.4vw,44px) !important}
+  html{scroll-padding-top:12px}
+}
+/* ===== Tablette et accessibilité ===== */
+@media (prefers-reduced-motion: reduce){
+  .mn-r1{translate:0 5em}.mn-r3{translate:0 10em}.mn-r2{translate:0 0}.mn-k{scale:1}
+  .mqt{width:100%;justify-content:center}.mqg[aria-hidden]{display:none}.mqg{flex:0 1 100%;box-sizing:border-box;flex-wrap:wrap;justify-content:center;row-gap:8px;padding:0 16px}.mqg>*:nth-child(n+6){display:none}
+}
+@media (min-width:721px) and (max-width:1100px){
+  .hd{gap:14px 24px !important}
+  .hd nav{width:100%;justify-content:space-between;gap:12px 18px !important;font-size:12px !important}
+  .hx-hero .hin{padding-top:24px !important}
+}
+@media (max-width:1000px){
+  .stgw{flex:1 1 100% !important;max-width:600px}
+}
+@media (max-width:380px){
+  .mbar a{font-size:14px;padding:12px 6px}
+  .hd nav{gap:18px !important}
+}
+</style>
+
+</head>
+<body>
+
+
+<div style="--acc:#EE9822;display:flex;flex-direction:column;background:#ffffff;font-family:'DM Sans',system-ui,sans-serif;color:#000000">
+  <a class="skip" href="#main">Aller au contenu principal</a>
+  <div class="prog" aria-hidden="true"></div>
+  <div class="mbar"><a class="mb1" href="#contact">Réserver un créneau</a><a class="mb2" href="https://wa.me/27783871119?text=Bonjour%20Benjamin%2C%20je%20souhaite%20un%20audit%20SEO." target="_blank" rel="noopener">WhatsApp</a></div>
+
+  <!-- BANDEROLE -->
+  <div style="background:#EE9822;color:#000000">
+    <div class="ban mq">
+      <div class="mqt">
+        <div class="mqg"><span class="mqi">Audit SEO gratuit de votre site, sans engagement.</span><span class="mqs" aria-hidden="true">●</span><span class="mqi">Rendez-vous de 30 minutes, sans engagement.</span><span class="mqs" aria-hidden="true">●</span><a class="btn mqb" href="#contact">Réserver mon créneau</a><span class="mqs" aria-hidden="true">●</span><span class="mqi">Audit SEO gratuit de votre site, sans engagement.</span><span class="mqs" aria-hidden="true">●</span><span class="mqi">Rendez-vous de 30 minutes, sans engagement.</span><span class="mqs" aria-hidden="true">●</span><a class="btn mqb" href="#contact">Réserver mon créneau</a><span class="mqs" aria-hidden="true">●</span></div>
+        <div class="mqg" aria-hidden="true"><span class="mqi">Audit SEO gratuit de votre site, sans engagement.</span><span class="mqs" aria-hidden="true">●</span><span class="mqi">Rendez-vous de 30 minutes, sans engagement.</span><span class="mqs" aria-hidden="true">●</span><a class="btn mqb" href="#contact">Réserver mon créneau</a><span class="mqs" aria-hidden="true">●</span><span class="mqi">Audit SEO gratuit de votre site, sans engagement.</span><span class="mqs" aria-hidden="true">●</span><span class="mqi">Rendez-vous de 30 minutes, sans engagement.</span><span class="mqs" aria-hidden="true">●</span><a class="btn mqb" href="#contact">Réserver mon créneau</a><span class="mqs" aria-hidden="true">●</span></div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+  <!-- HERO + NAV -->
+  <div class="hx-hero">
+    <div style="position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 24px;box-sizing:border-box">
+
+      <div class="hd" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding:28px 0">
+        <a href="#top" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:#ffedd7">
+          <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><rect x="4" y="19" width="6" height="11" fill="#ffedd7"/><rect x="14" y="12" width="6" height="18" fill="#ffedd7"/><rect x="24" y="4" width="6" height="26" fill="#EE9822"/></svg>
+          <span style="display:flex;flex-direction:column;line-height:1.15">
+            <span style="font-family:'Libre Baskerville',Georgia,serif;font-size:20px;font-weight:700">Benjamin EGAH</span>
+            <span style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#d9c3a6">Consultant SEO</span>
+          </span>
+        </a>
+        <nav aria-label="Navigation principale" style="display:flex;flex-wrap:wrap;align-items:center;gap:12px 32px;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;font-weight:500">
+          <a class="nl" href="#services" style="text-decoration:none;color:#ffedd7;padding:10px 0">Services</a>
+          <a class="nl" href="#portfolio" style="text-decoration:none;color:#ffedd7;padding:10px 0">Portfolio</a>
+          <a class="nl" href="#resultats" style="text-decoration:none;color:#ffedd7;padding:10px 0">Résultats</a>
+          <a class="nl" href="#a-propos" style="text-decoration:none;color:#ffedd7;padding:10px 0">À propos</a>
+          <a class="nl" href="#temoignages" style="text-decoration:none;color:#ffedd7;padding:10px 0">Témoignages</a>
+          <a class="btn" href="#contact" style="text-decoration:none;color:#000000;background:#EE9822;padding:13px 22px;font-weight:600;border-radius:3px">Audit gratuit</a>
+        </nav>
+      </div>
+
+      <div id="top" class="hin" style="display:flex;flex-wrap:wrap;align-items:center;gap:32px 40px;padding:40px 0 72px">
+        <div class="ht" style="flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:24px">
+          <div style="font-size:13px;letter-spacing:0.16em;text-transform:uppercase;font-weight:500;color:#d9c3a6;display:flex;align-items:center;gap:12px"><span style="width:28px;border-top:1px dashed #6c5f51"></span>Consultant SEO</div>
+          <h1 style="margin:0;font-family:'Libre Baskerville',Georgia,serif;font-weight:400;font-size:clamp(36px,5vw,58px);line-height:1.12;color:#ffedd7;text-wrap:balance">Apparaissez en premier sur <span class="hl" style="color:#EE9822">Google</span>.</h1>
+          <p style="margin:0;font-size:18px;line-height:1.6;color:#e3d0b6;max-width:34em">J’aide les entreprises, commerces et organisations à gagner en visibilité sur Google, à attirer des clients qualifiés et à transformer chaque recherche en appel, message WhatsApp ou vente.</p>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:20px 28px;padding-top:8px">
+            <a class="btn" href="#contact" style="text-decoration:none;color:#000000;background:#EE9822;padding:16px 28px;font-weight:600;font-size:16px;border-radius:3px">Demander un audit gratuit</a>
+            <a href="#methode" style="color:#ffedd7;font-size:15px;text-decoration:underline;text-underline-offset:4px">Voir comment je travaille</a>
+          </div>
+          <div class="hx-card">
+            <img src="portrait-thumb.jpg" width="168" height="250" alt="Portrait de Benjamin EGAH, consultant SEO" style="width:56px;height:56px;border-radius:12px;object-fit:cover;object-position:center 24%;display:block;flex:none">
+            <div style="display:flex;flex-direction:column;gap:4px;min-width:0">
+              <span style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;color:#ffedd7">Benjamin EGAH</span>
+              <span style="font-size:14px;line-height:1.4;color:#d9c3a6">Audit, SEO local, contenu et suivi mensuel.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="stgw" role="img" aria-label="Un ordinateur, une tablette et un téléphone affichant les résultats Google, la croissance du trafic et les appels reçus">
+          <div class="stg" aria-hidden="true">
+            <div class="hx-l">
+
+              <div class="hx-d hx-mon"><div class="hx-bk"></div>
+                <div class="hx-scr mn-s">
+                  <div class="mn-bar"><span class="mn-dot" style="background:#000000"></span><span class="mn-dot" style="background:#EE9822"></span><span class="mn-dot" style="background:#bdbdbd"></span><span class="mn-url">google.com/search?q=consultant+seo</span></div>
+                  <div class="mn-top"><span class="mn-logo"><b style="color:#000000">G</b><b style="color:#EE9822">o</b><b style="color:#000000">o</b><b style="color:#000000">g</b><b style="color:#EE9822">l</b><b style="color:#000000">e</b></span>
+                    <span class="mn-q"><span class="mn-qt">consultant seo</span></span></div>
+                  <div class="mn-list">
+                    <div class="mn-r mn-r1"><u>www.agence-exemple.com</u><b>Agence web et SEO, devis rapide</b><i>Création de sites et référencement pour entreprises.</i></div>
+                    <div class="mn-r mn-r3"><u>www.annuaire-seo.com</u><b>Annuaire des consultants SEO</b><i>Comparez les prestataires et leurs tarifs.</i></div>
+                    <div class="mn-r mn-r2 mn-me"><u>Benjamin EGAH · Consultant SEO</u><b>Consultant SEO, audit gratuit de votre site</b><i>Plus de visibilité, plus d’appels et de messages WhatsApp.</i></div>
+                  </div>
+                  <span class="mn-k">N°1 sur Google</span>
+                  <div class="hx-gl"></div>
+                </div>
+              </div>
+
+              <div class="hx-d hx-tab"><div class="hx-bk"></div>
+                <div class="hx-scr tb-s">
+                  <div class="tb-h"><span>Trafic Google</span><em>30 jours</em></div>
+                  <div class="tb-n"><span class="tb-k"></span><span class="tb-p"> %</span></div>
+                  <div class="tb-sub">visites depuis la recherche</div>
+                  <div class="tb-ch"><i style="--h:22%;--d:0s"></i><i style="--h:30%;--d:.12s"></i><i style="--h:38%;--d:.24s"></i><i style="--h:52%;--d:.36s"></i><i style="--h:66%;--d:.48s"></i><i style="--h:80%;--d:.6s"></i><i style="--h:100%;--d:.72s"></i></div>
+                  <div class="hx-gl"></div>
+                </div>
+              </div>
+
+              <div class="hx-d hx-pho"><div class="hx-bk"></div>
+                <div class="hx-scr ph-s">
+                  <div class="ph-map"><span class="ph-park"></span><span class="ph-lake"></span><span class="ph-rd1"></span><span class="ph-rd2"></span><span class="ph-rd3"></span>
+                    <span class="ph-pin"><span class="ph-ring"></span><span class="ph-dot"></span></span></div>
+                  <div class="ph-nt"></div>
+                  <div class="ph-sheet">
+                    <b class="ph-t">Votre entreprise</b>
+                    <span class="ph-st"><span style="color:#EE9822">★★★★★</span> 4,9</span>
+                    <div class="ph-btn"><span class="ph-call">Appeler</span><span class="ph-wa">WhatsApp</span></div>
+                  </div>
+                  <div class="hx-gl"></div>
+                </div>
+              </div>
+
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  <!-- CHIFFRES CLES -->
+  <div id="resultats" style="background:#ffffff">
+    <div class="sec" style="max-width:1240px;margin:0 auto;padding:80px 24px;box-sizing:border-box;display:flex;flex-direction:column;gap:48px">
+      <div class="rv" style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#000000;font-weight:600"><span style="width:28px;height:3px;background:#EE9822"></span>Chiffres clés</div>
+        <h2 style="margin:0;font-family:'Libre Baskerville',Georgia,serif;font-weight:400;font-size:clamp(30px,4.2vw,50px);line-height:1.2;text-wrap:balance">Des résultats concrets, mesurés chaque mois.</h2>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:32px 0">
+        <div class="rv d1 st" style="flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:8px;padding:4px 28px 4px 0">
+          <span class="bar" style="width:40px;height:4px;background:#EE9822"></span><div class="bn" style="font-family:'Libre Baskerville',Georgia,serif;font-size:52px;line-height:1;color:#000000">2 ans</div>
+          <div style="font-size:16px;line-height:1.5;color:#4A4A4A">d’expérience en référencement naturel et en création de sites</div>
+        </div>
+        <div class="rv d2 st" style="flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:8px;padding:4px 28px;border-left:1px solid #E5E2DC">
+          <span class="bar" style="width:40px;height:4px;background:#EE9822"></span><div class="bn" style="font-family:'Libre Baskerville',Georgia,serif;font-size:52px;line-height:1;color:#000000">5</div>
+          <div style="font-size:16px;line-height:1.5;color:#4A4A4A">entreprises et organisations accompagnées jusqu’ici</div>
+        </div>
+        <div class="rv d3 st" style="flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:8px;padding:4px 28px;border-left:1px solid #E5E2DC">
+          <span class="bar" style="width:40px;height:4px;background:#EE9822"></span><div class="bn" style="font-family:'Libre Baskerville',Georgia,serif;font-size:52px;line-height:1;color:#000000">+25&nbsp;%</div>
+          <div style="font-size:16px;line-height:1.5;color:#4A4A4A">de trafic organique en moyenne après 6 mois de collaboration</div>
+        </div>
+        <div class="rv d4 st" style="flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:8px;padding:4px 0 4px 28px;border-left:1px solid #E5E2DC">
+          <span class="bar" style="width:40px;height:4px;background:#EE9822"></span><div class="bn" style="font-family:'Libre Baskerville',Georgia,serif;font-size:52px;line-height:1;color:#000000">1,5×</div>
+          <div style="font-size:16px;line-height:1.5;color:#4A4A4A">plus d’appels et de messages WhatsApp grâce à une fiche Google optimisée</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div id="services" style="background:#F7F5F0">
+    <div class="sec" style="max-width:1240px;margin:0 auto;padding:88px 24px;box-sizing:border-box;display:flex;flex-direction:column;gap:48px">
+      <div class="rv" style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#000000;font-weight:600"><span style="width:28px;height:3px;background:#EE9822"></span>Services</div>
+        <h2 style="margin:0;font-family:'Libre Baskerville',Georgia,serif;font-weight:400;font-size:clamp(30px,4.2vw,50px);line-height:1.2;text-wrap:balance">Un accompagnement SEO complet.</h2>
+        <p style="margin:0;font-size:17px;line-height:1.6;color:#4A4A4A;max-width:44em">Adapté à votre activité et à votre marché. Vos clients cherchent sur leur téléphone, dans leur langue, au moment où ils ont besoin de vous. Je construis votre visibilité autour de ces habitudes.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:24px">
+
+        <div class="card rv d1 pad" style="flex:1 1 420px;min-width:0;display:flex;flex-direction:row;align-items:flex-start;gap:20px;background:transparent;border:1px solid rgba(255,255,255,0.08);padding:32px 28px;border-radius:12px">
+          <div class="ico" style="flex:none;width:52px;height:52px;display:flex;align-items:center;justify-content:center;background:#000000;color:#EE9822;border-radius:3px">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+          </div>
+          <div style="flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:8px"><h3 style="margin:0;font-size:20px;font-weight:700">Audit SEO complet</h3><p style="margin:0;font-size:16px;line-height:1.6;color:#4A4A4A">Analyse de votre site, de vos concurrents et de vos mots-clés. Vous recevez un rapport clair avec les priorités à traiter en premier.</p></div>
+        </div>
+
+        <div class="card rv d2 pad" style="flex:1 1 420px;min-width:0;display:flex;flex-direction:row;align-items:flex-start;gap:20px;background:transparent;border:1px solid rgba(255,255,255,0.08);padding:32px 28px;border-radius:12px">
+          <div class="ico" style="flex:none;width:52px;height:52px;display:flex;align-items:center;justify-content:center;background:#000000;color:#EE9822;border-radius:3px">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0113 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>
+          </div>
+          <div style="flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:8px"><h3 style="margin:0;font-size:20px;font-weight:700">SEO local et Google Maps</h3><p style="margin:0;font-size:16px;line-height:1.6;color:#4A4A4A">Optimisation de votre fiche Google Business Profile pour apparaître dans les recherches « près de moi », avec avis, photos et horaires à jour.</p></div>
+        </div>
+
+        <div class="card rv d1 pad" style="flex:1 1 420px;min-width:0;display:flex;flex-direction:row;align-items:flex-start;gap:20px;background:transparent;border:1px solid rgba(255,255,255,0.08);padding:32px 28px;border-radius:12px">
+          <div class="ico" style="flex:none;width:52px;height:52px;display:flex;align-items:center;justify-content:center;background:#000000;color:#EE9822;border-radius:3px">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3.5h8l4 4V20.5H6z"/><path d="M9 12h6M9 16h6"/></svg>
+          </div>
+          <div style="flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:8px"><h3 style="margin:0;font-size:20px;font-weight:700">Contenu et mots-clés</h3><p style="margin:0;font-size:16px;line-height:1.6;color:#4A4A4A">Recherche des mots-clés que tapent vos clients, puis plan éditorial et articles, dans la langue de votre public, qui répondent à leurs vraies questions.</p></div>
+        </div>
+
+        <div class="card rv d2 pad" style="flex:1 1 420px;min-width:0;display:flex;flex-direction:row;align-items:flex-start;gap:20px;background:transparent;border:1px solid rgba(255,255,255,0.08);padding:32px 28px;border-radius:12px">
+          <div class="ico" style="flex:none;width:52px;height:52px;display:flex;align-items:center;justify-content:center;background:#000000;color:#EE9822;border-radius:3px">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16a8 8 0 1116 0"/><path d="M12 16l4-5"/></svg>
+          </div>
+          <div style="flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:8px"><h3 style="margin:0;font-size:20px;font-weight:700">SEO technique et mobile</h3><p style="margin:0;font-size:16px;line-height:1.6;color:#4A4A4A">Vitesse de chargement sur connexion mobile, structure du site, balises et indexation. Votre site reste rapide même sur une connexion lente.</p></div>
+        </div>
+
+        <div class="card rv d1 pad" style="flex:1 1 420px;min-width:0;display:flex;flex-direction:row;align-items:flex-start;gap:20px;background:transparent;border:1px solid rgba(255,255,255,0.08);padding:32px 28px;border-radius:12px">
+          <div class="ico" style="flex:none;width:52px;height:52px;display:flex;align-items:center;justify-content:center;background:#000000;color:#EE9822;border-radius:3px">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/></svg>
+          </div>
+          <div style="flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:8px"><h3 style="margin:0;font-size:20px;font-weight:700">Liens et notoriété locale</h3><p style="margin:0;font-size:16px;line-height:1.6;color:#4A4A4A">Présence dans les annuaires, médias et sites partenaires de votre secteur et de votre région pour renforcer la confiance de Google dans votre site.</p></div>
+        </div>
+
+        <div class="card rv d2 pad" style="flex:1 1 420px;min-width:0;display:flex;flex-direction:row;align-items:flex-start;gap:20px;background:transparent;border:1px solid rgba(255,255,255,0.08);padding:32px 28px;border-radius:12px">
+          <div class="ico" style="flex:none;width:52px;height:52px;display:flex;align-items:center;justify-content:center;background:#000000;color:#EE9822;border-radius:3px">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V4"/><path d="M4 20h16"/><path d="M8 15l4-4 3 3 5-6"/></svg>
+          </div>
+          <div style="flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:8px"><h3 style="margin:0;font-size:20px;font-weight:700">Suivi et rapport mensuel</h3><p style="margin:0;font-size:16px;line-height:1.6;color:#4A4A4A">Positions, trafic, appels et messages WhatsApp suivis dans Google Search Console et Analytics. Un point mensuel, sans jargon.</p></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- PORTFOLIO -->
+  <div id="portfolio" style="background:#100904">
+    <div class="sec" style="max-width:1240px;margin:0 auto;padding:88px 24px;box-sizing:border-box;display:flex;flex-direction:column;gap:48px">
+      <div class="rv" style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#ffedd7;font-weight:600"><span style="width:28px;height:3px;background:#EE9822"></span>Portfolio</div>
+        <h2 style="margin:0;font-family:'Libre Baskerville',Georgia,serif;font-weight:400;font-size:clamp(30px,4.2vw,50px);line-height:1.2;color:#ffedd7;text-wrap:balance">Des sites que j’ai créés et optimisés.</h2>
+        <p style="margin:0;font-size:17px;line-height:1.6;color:#d9c3a6;max-width:44em">Chaque projet est pensé pour être rapide, clair et bien placé sur Google. Ouvrez-les et jugez par vous-même.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:24px">
+        <div class="card dk rv d1" style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;background:transparent;border:1px solid rgba(238,152,34,0.15);border-radius:12px;overflow:hidden">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#382416">
+            <span style="width:9px;height:9px;border-radius:50%;background:#6c5f51"></span><span style="width:9px;height:9px;border-radius:50%;background:#6c5f51"></span><span style="width:9px;height:9px;border-radius:50%;background:#6c5f51"></span>
+            <span style="margin-left:8px;flex:1 1 0;min-width:0;font-size:12px;color:#d9c3a6;background:#100904;padding:4px 10px;border-radius:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">[adresse-du-site.com]</span>
+          </div>
+          <div role="img" aria-label="Emplacement capture d’écran du site" style="max-width:100%;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(135deg,#241508 0px,#241508 14px,#1d120a 14px,#1d120a 28px)">
+            <span style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#d9c3a6;background:#100904;padding:8px 14px;border-radius:3px">Capture d’écran à ajouter</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;padding:24px 24px 26px">
+            <span style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#EE9822;font-weight:600">Boutique en ligne</span>
+            <h3 style="margin:0;font-size:20px;font-weight:700;color:#ffedd7">[Nom du site 1]</h3>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#d9c3a6">Création du site et optimisation des fiches produits pour attirer des acheteurs depuis Google.</p>
+            <p style="margin:0;font-size:15px;line-height:1.5;color:#ffedd7;font-weight:600">[Résultat chiffré du projet]</p>
+            <a class="lnk" href="#portfolio" style="color:#ffedd7;font-size:15px;font-weight:600;text-decoration:underline;text-underline-offset:4px;padding-top:4px">Visiter le site <span class="arr" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="card dk rv d2" style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;background:transparent;border:1px solid rgba(238,152,34,0.15);border-radius:12px;overflow:hidden">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#382416">
+            <span style="width:9px;height:9px;border-radius:50%;background:#6c5f51"></span><span style="width:9px;height:9px;border-radius:50%;background:#6c5f51"></span><span style="width:9px;height:9px;border-radius:50%;background:#6c5f51"></span>
+            <span style="margin-left:8px;flex:1 1 0;min-width:0;font-size:12px;color:#d9c3a6;background:#100904;padding:4px 10px;border-radius:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">[adresse-du-site.com]</span>
+          </div>
+          <div role="img" aria-label="Emplacement capture d’écran du site" style="max-width:100%;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(135deg,#241508 0px,#241508 14px,#1d120a 14px,#1d120a 28px)">
+            <span style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#d9c3a6;background:#100904;padding:8px 14px;border-radius:3px">Capture d’écran à ajouter</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;padding:24px 24px 26px">
+            <span style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#EE9822;font-weight:600">Site vitrine</span>
+            <h3 style="margin:0;font-size:20px;font-weight:700;color:#ffedd7">[Nom du site 2]</h3>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#d9c3a6">Site d’entreprise rapide et lisible sur mobile, avec une structure pensée pour le référencement.</p>
+            <p style="margin:0;font-size:15px;line-height:1.5;color:#ffedd7;font-weight:600">[Résultat chiffré du projet]</p>
+            <a class="lnk" href="#portfolio" style="color:#ffedd7;font-size:15px;font-weight:600;text-decoration:underline;text-underline-offset:4px;padding-top:4px">Visiter le site <span class="arr" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="card dk rv d3" style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;background:transparent;border:1px solid rgba(238,152,34,0.15);border-radius:12px;overflow:hidden">
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:#382416">
+            <span style="width:9px;height:9px;border-radius:50%;background:#6c5f51"></span><span style="width:9px;height:9px;border-radius:50%;background:#6c5f51"></span><span style="width:9px;height:9px;border-radius:50%;background:#6c5f51"></span>
+            <span style="margin-left:8px;flex:1 1 0;min-width:0;font-size:12px;color:#d9c3a6;background:#100904;padding:4px 10px;border-radius:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">[adresse-du-site.com]</span>
+          </div>
+          <div role="img" aria-label="Emplacement capture d’écran du site" style="max-width:100%;aspect-ratio:16/10;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(135deg,#241508 0px,#241508 14px,#1d120a 14px,#1d120a 28px)">
+            <span style="font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#d9c3a6;background:#100904;padding:8px 14px;border-radius:3px">Capture d’écran à ajouter</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;padding:24px 24px 26px">
+            <span style="font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#EE9822;font-weight:600">Organisation</span>
+            <h3 style="margin:0;font-size:20px;font-weight:700;color:#ffedd7">[Nom du site 3]</h3>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#d9c3a6">Refonte du site et du contenu pour être trouvé sur les recherches qui comptent pour son public.</p>
+            <p style="margin:0;font-size:15px;line-height:1.5;color:#ffedd7;font-weight:600">[Résultat chiffré du projet]</p>
+            <a class="lnk" href="#portfolio" style="color:#ffedd7;font-size:15px;font-weight:600;text-decoration:underline;text-underline-offset:4px;padding-top:4px">Visiter le site <span class="arr" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px">
+        <a class="btn" href="#contact" style="text-decoration:none;color:#100904;background:#EE9822;padding:16px 28px;font-weight:600;font-size:16px;border-radius:3px">Parler de mon projet</a>
+        <span style="font-size:15px;color:#d9c3a6">Votre site pourrait être le prochain de cette liste.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- A PROPOS -->
+  <div id="a-propos" style="background:#ffffff">
+    <div class="sec" style="max-width:1240px;margin:0 auto;padding:96px 24px;box-sizing:border-box;display:flex;flex-wrap:wrap;align-items:center;gap:56px">
+      <img class="ap" src="portrait.jpg" width="900" height="1342" alt="Benjamin EGAH, consultant SEO, en chemise blanche" style="flex:1 1 280px;min-width:0;max-width:100%;height:520px;object-fit:cover;object-position:center top;border-radius:3px;display:block">
+      <div class="rv d1" style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:22px">
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#000000;font-weight:600"><span style="width:28px;height:3px;background:#EE9822"></span>À propos</div>
+        <h2 style="margin:0;font-family:'Libre Baskerville',Georgia,serif;font-weight:400;font-size:clamp(30px,4.2vw,50px);line-height:1.2;text-wrap:balance">Un consultant à votre écoute.</h2>
+        <p style="margin:0;font-size:17px;line-height:1.7;color:#4A4A4A">Je m’appelle Benjamin EGAH, consultant SEO. Je travaille avec des PME, hôtels, cliniques, écoles, boutiques en ligne et organisations qui veulent être trouvés par leurs clients, chez eux comme à l’international.</p>
+        <p style="margin:0;font-size:17px;line-height:1.7;color:#4A4A4A">Je connais vos réalités : clients qui cherchent depuis leur téléphone, échanges sur WhatsApp, concurrence qui se joue souvent sur Google Maps. Chaque stratégie part de là.</p>
+        <div style="display:flex;flex-direction:column;gap:12px;padding-top:6px">
+          <div style="display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.5"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:1px"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Transparence totale.</strong> Vous savez ce que je fais, pourquoi et avec quels résultats.</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.5"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:1px"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Priorité au mobile.</strong> Votre site est pensé d’abord pour l’écran du téléphone.</span></div>
+          <div style="display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.5"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none;margin-top:1px"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span><strong>Résultats mesurables.</strong> Positions, appels et ventes suivis chaque mois.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- METHODE -->
+  <div id="methode" style="background:#F7F5F0">
+    <div class="sec" style="max-width:1240px;margin:0 auto;padding:88px 24px;box-sizing:border-box;display:flex;flex-direction:column;gap:48px">
+      <div class="rv" style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#000000;font-weight:600"><span style="width:28px;height:3px;background:#EE9822"></span>Ma méthode</div>
+        <h2 style="margin:0;font-family:'Libre Baskerville',Georgia,serif;font-weight:400;font-size:clamp(30px,4.2vw,50px);line-height:1.2;text-wrap:balance">Quatre étapes, du diagnostic aux résultats.</h2>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:36px 32px">
+        <div class="rv d1" style="flex:1 1 240px;min-width:0;display:flex;flex-direction:column;gap:14px">
+          <div class="num" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#000000;color:#EE9822;font-family:'Libre Baskerville',Georgia,serif;font-size:20px;font-weight:700">1</div>
+          <h3 style="margin:0;font-size:20px;font-weight:700">Diagnostic</h3>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#4A4A4A">J’analyse votre site, vos concurrents et vos mots-clés pour repérer ce qui vous freine et ce qui peut vous rapporter vite.</p>
+        </div>
+        <div class="rv d2" style="flex:1 1 240px;min-width:0;display:flex;flex-direction:column;gap:14px">
+          <div class="num" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#000000;color:#EE9822;font-family:'Libre Baskerville',Georgia,serif;font-size:20px;font-weight:700">2</div>
+          <h3 style="margin:0;font-size:20px;font-weight:700">Stratégie</h3>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#4A4A4A">Nous fixons ensemble les priorités, les pages à travailler et les objectifs, avec un calendrier simple à suivre.</p>
+        </div>
+        <div class="rv d3" style="flex:1 1 240px;min-width:0;display:flex;flex-direction:column;gap:14px">
+          <div class="num" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#000000;color:#EE9822;font-family:'Libre Baskerville',Georgia,serif;font-size:20px;font-weight:700">3</div>
+          <h3 style="margin:0;font-size:20px;font-weight:700">Mise en œuvre</h3>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#4A4A4A">Je corrige la technique, optimise vos pages et produis le contenu qui répond aux recherches de vos clients.</p>
+        </div>
+        <div class="rv d4" style="flex:1 1 240px;min-width:0;display:flex;flex-direction:column;gap:14px">
+          <div class="num" style="width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#000000;color:#EE9822;font-family:'Libre Baskerville',Georgia,serif;font-size:20px;font-weight:700">4</div>
+          <h3 style="margin:0;font-size:20px;font-weight:700">Suivi</h3>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#4A4A4A">Chaque mois, vous recevez un rapport clair : positions, visites, contacts. Nous ajustons selon les résultats.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEMOIGNAGES -->
+  <div id="temoignages" style="background:#100904">
+    <div class="sec" style="max-width:1240px;margin:0 auto;padding:88px 24px;box-sizing:border-box;display:flex;flex-direction:column;gap:48px">
+      <div class="rv" style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#ffedd7;font-weight:600"><span style="width:28px;height:3px;background:#EE9822"></span>Témoignages</div>
+        <h2 style="margin:0;color:#ffedd7;font-family:'Libre Baskerville',Georgia,serif;font-weight:400;font-size:clamp(30px,4.2vw,50px);line-height:1.2;text-wrap:balance">Ce que disent les entreprises accompagnées.</h2>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:24px">
+
+        <figure class="card dk rv d1 pad" style="flex:1 1 320px;min-width:0;margin:0;display:flex;flex-direction:column;justify-content:space-between;gap:28px;background:transparent;border:1px solid rgba(238,152,34,0.15);border-radius:12px;padding:32px 28px;border-radius:12px">
+          <blockquote style="margin:0;color:#ffedd7;font-family:'Libre Baskerville',Georgia,serif;font-size:18px;line-height:1.65">« Notre restaurant apparaît maintenant dans les premiers résultats Google Maps de notre ville. Les réservations par WhatsApp ont nettement augmenté dès le troisième mois. »</blockquote>
+          <figcaption style="color:#ffedd7;display:flex;flex-direction:column;gap:2px;font-size:15px">
+            <strong>[Prénom Nom]</strong>
+            <span style="color:#d9c3a6">Gérant, restaurant</span>
+          </figcaption>
+        </figure>
+
+        <figure class="card dk rv d2 pad" style="flex:1 1 320px;min-width:0;margin:0;display:flex;flex-direction:column;justify-content:space-between;gap:28px;background:transparent;border:1px solid rgba(238,152,34,0.15);border-radius:12px;padding:32px 28px;border-radius:12px">
+          <blockquote style="margin:0;color:#ffedd7;font-family:'Libre Baskerville',Georgia,serif;font-size:18px;line-height:1.65">« Benjamin a corrigé les lenteurs de notre boutique en ligne et structuré nos fiches produits. Le trafic venu de Google a nettement progressé en six mois. »</blockquote>
+          <figcaption style="color:#ffedd7;display:flex;flex-direction:column;gap:2px;font-size:15px">
+            <strong>[Prénom Nom]</strong>
+            <span style="color:#d9c3a6">Fondatrice, boutique de mode en ligne</span>
+          </figcaption>
+        </figure>
+
+        <figure class="card dk rv d3 pad" style="flex:1 1 320px;min-width:0;margin:0;display:flex;flex-direction:column;justify-content:space-between;gap:28px;background:transparent;border:1px solid rgba(238,152,34,0.15);border-radius:12px;padding:32px 28px;border-radius:12px">
+          <blockquote style="margin:0;color:#ffedd7;font-family:'Libre Baskerville',Georgia,serif;font-size:18px;line-height:1.65">« Des explications simples, un rapport clair chaque mois et un vrai suivi. Notre clinique reçoit plus de demandes de rendez-vous depuis la recherche Google. »</blockquote>
+          <figcaption style="color:#ffedd7;display:flex;flex-direction:column;gap:2px;font-size:15px">
+            <strong>[Prénom Nom]</strong>
+            <span style="color:#d9c3a6">Directeur, clinique privée</span>
+          </figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div id="faq" style="background:#ffffff">
+    <div class="sec" style="max-width:1240px;margin:0 auto;padding:88px 24px;box-sizing:border-box;display:flex;flex-direction:column;gap:40px">
+      <div class="rv" style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:10px;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#000000;font-weight:600"><span style="width:28px;height:3px;background:#EE9822"></span>Questions fréquentes</div>
+        <h2 style="margin:0;font-family:'Libre Baskerville',Georgia,serif;font-weight:400;font-size:clamp(30px,4.2vw,50px);line-height:1.2;text-wrap:balance">Ce que mes clients me demandent le plus.</h2>
+      </div>
+      <div style="min-width:0;display:flex;flex-direction:column;border-top:1px solid #E5E2DC">
+          <details class="rv" style="border-bottom:1px solid #E5E2DC;padding:20px 0">
+            <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;font-size:18px;font-weight:600;list-style:none">En combien de temps verrai-je des résultats ?<span class="faq-plus" style="flex:none;font-size:26px;line-height:1;color:#000000">+</span></summary>
+            <p style="margin:14px 0 0;font-size:16px;line-height:1.7;color:#4A4A4A;max-width:42em">Les premiers effets apparaissent en général entre 3 et 6 mois. Le délai dépend de votre secteur, de la concurrence et de l’état actuel de votre site.</p>
+          </details>
+          <details class="rv" style="border-bottom:1px solid #E5E2DC;padding:20px 0">
+            <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;font-size:18px;font-weight:600;list-style:none">Travaillez-vous à distance ?<span class="faq-plus" style="flex:none;font-size:26px;line-height:1;color:#000000">+</span></summary>
+            <p style="margin:14px 0 0;font-size:16px;line-height:1.7;color:#4A4A4A;max-width:42em">Oui. Nous échangeons par visioconférence, téléphone ou WhatsApp, et je peux accompagner des entreprises dans plusieurs pays.</p>
+          </details>
+          <details class="rv" style="border-bottom:1px solid #E5E2DC;padding:20px 0">
+            <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;font-size:18px;font-weight:600;list-style:none">Combien coûte un accompagnement SEO ?<span class="faq-plus" style="flex:none;font-size:26px;line-height:1;color:#000000">+</span></summary>
+            <p style="margin:14px 0 0;font-size:16px;line-height:1.7;color:#4A4A4A;max-width:42em">Chaque mission est chiffrée après l’audit gratuit, selon la taille de votre site et vos objectifs. Vous recevez un devis clair avant de commencer.</p>
+          </details>
+          <details class="rv" style="border-bottom:1px solid #E5E2DC;padding:20px 0">
+            <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;font-size:18px;font-weight:600;list-style:none">Dois-je refaire mon site ?<span class="faq-plus" style="flex:none;font-size:26px;line-height:1;color:#000000">+</span></summary>
+            <p style="margin:14px 0 0;font-size:16px;line-height:1.7;color:#4A4A4A;max-width:42em">Pas forcément. L’audit indique ce qui peut être corrigé sur votre site actuel et ce qui mérite d’être reconstruit.</p>
+          </details>
+          <details class="rv" style="border-bottom:1px solid #E5E2DC;padding:20px 0">
+            <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;font-size:18px;font-weight:600;list-style:none">Quelle différence avec la publicité sur Google ?<span class="faq-plus" style="flex:none;font-size:26px;line-height:1;color:#000000">+</span></summary>
+            <p style="margin:14px 0 0;font-size:16px;line-height:1.7;color:#4A4A4A;max-width:42em">La publicité s’arrête dès que vous cessez de payer. Le SEO construit une visibilité durable qui continue d’attirer des visiteurs mois après mois.</p>
+          </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div id="contact" style="background:#EE9822">
+    <div class="sec" style="max-width:1240px;margin:0 auto;padding:80px 24px;box-sizing:border-box;display:flex;flex-direction:column;gap:40px">
+      <div class="rv" style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 48px">
+        <div style="flex:1 1 440px;min-width:0;display:flex;flex-direction:column;gap:14px">
+          <h2 style="margin:0;font-family:'Libre Baskerville',Georgia,serif;font-weight:700;font-size:clamp(34px,5vw,60px);line-height:1.15;color:#000000;text-wrap:balance">Votre site mérite d’être trouvé.</h2>
+          <p style="margin:0;font-size:18px;line-height:1.6;color:#000000;max-width:36em">Choisissez un jour et un horaire, puis laissez vos coordonnées. Je regarde votre site, votre fiche Google et vos concurrents, puis je vous dis où se trouvent vos meilleures opportunités.</p>
+        </div>
+        <div style="flex:0 1 auto;display:flex;flex-direction:column;gap:4px;font-size:16px;font-weight:600;color:#000000">
+          <a href="https://wa.me/27783871119" target="_blank" rel="noopener" style="color:#000000;text-decoration:underline;text-underline-offset:4px">WhatsApp : +27 78 387 1119</a>
+          <a href="mailto:j7881863@gami.com" style="color:#000000;text-decoration:underline;text-underline-offset:4px">j7881863@gami.com</a>
+        </div>
+      </div>
+      <!-- FORM-START -->
+      <div class="rv d1 bk" style="background:transparent;border:1px solid rgba(238,152,34,0.15);color:var(--bone);border-radius:24px;padding:36px;box-sizing:border-box">
+        <div id="rdv-wrap" style="display:flex;flex-wrap:wrap;gap:36px 56px">
+          <div style="flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:18px">
+            <div class="stp"><span class="n">1</span>Choisissez un créneau</div>
+            <div class="cal-h">
+              <button type="button" class="cal-nav" id="cal-prev" aria-label="Mois précédent">‹</button>
+              <div class="cal-m" id="cal-m"></div>
+              <button type="button" class="cal-nav" id="cal-next" aria-label="Mois suivant">›</button>
+            </div>
+            <div class="cal-grid" aria-hidden="true">
+              <div class="cal-wd">L</div><div class="cal-wd">M</div><div class="cal-wd">M</div><div class="cal-wd">J</div><div class="cal-wd">V</div><div class="cal-wd">S</div><div class="cal-wd">D</div>
+            </div>
+            <div class="cal-grid" id="cal-days"></div>
+            <div class="cal-sub">Rendez-vous de 30 minutes, du lundi au vendredi, réservables jusqu’à 3 mois à l’avance. Horaires en heure de Lomé (GMT).</div>
+            <div class="slots" id="cal-slots"></div>
+          </div>
+          <form id="rdv-form" name="rdv" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" style="flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:16px">
+            <input type="hidden" name="form-name" value="rdv">
+            <input type="hidden" name="date" id="f-date">
+            <input type="hidden" name="heure" id="f-heure">
+            <input type="hidden" name="creneau" id="f-creneau">
+            <input type="hidden" name="subject" id="f-subject" value="Nouveau rendez-vous SEO">
+            <input type="hidden" name="duree" value="30 minutes">
+            <p hidden><label>Ne pas remplir : <input name="bot-field"></label></p>
+            <div class="stp"><span class="n">2</span>Vos coordonnées</div>
+            <div class="row">
+              <div class="fld"><label for="f-name">Nom complet</label><input id="f-name" name="nom" class="inp" type="text" autocomplete="name" placeholder="Votre nom"></div>
+              <div class="fld"><label for="f-email">E-mail</label><input id="f-email" name="email" class="inp" type="text" autocomplete="email" placeholder="vous@exemple.com"></div>
+            </div>
+            <div class="row">
+              <div class="fld"><label for="f-phone">WhatsApp ou téléphone</label><input id="f-phone" name="telephone" class="inp" type="text" autocomplete="tel" placeholder="+XXX XX XX XX XX"></div>
+              <div class="fld"><label for="f-site">Votre site (facultatif)</label><input id="f-site" name="site" class="inp" type="text" autocomplete="url" placeholder="www.votre-site.com"></div>
+            </div>
+            <div class="fld"><label for="f-need">Votre besoin</label>
+              <select id="f-need" name="besoin" class="inp">
+                <option value="Audit SEO complet">Audit SEO complet</option>
+                <option value="SEO local et Google Maps">SEO local et Google Maps</option>
+                <option value="Contenu et mots-clés">Contenu et mots-clés</option>
+                <option value="SEO technique et vitesse">SEO technique et vitesse</option>
+                <option value="Création ou refonte de site">Création ou refonte de site</option>
+                <option value="Autre">Autre</option>
+              </select>
+            </div>
+            <div class="fld"><label for="f-msg">Message (facultatif)</label><textarea id="f-msg" name="message" class="inp" rows="3" placeholder="Parlez-moi de votre activité et de vos objectifs."></textarea></div>
+            <div class="pick" id="pick">Aucun créneau choisi pour l’instant.</div>
+            <div class="err" id="f-err" role="alert"></div>
+            <a class="wa" id="wa-fallback" href="#" target="_blank" rel="noopener" hidden>Écrire sur WhatsApp</a>
+            <button type="submit" class="sub" id="f-sub">Confirmer ma demande</button>
+            <div class="cal-sub">Gratuit et sans engagement.</div>
+          </form>
+        </div>
+        <div class="done" id="rdv-done" hidden>
+          <div class="ok"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+          <h3 id="done-t" style="margin:0;font-family:'Libre Baskerville',Georgia,serif;font-size:28px;font-weight:700">Merci !</h3>
+          <p id="done-p" style="margin:0;font-size:17px;line-height:1.6;max-width:30em"></p>
+          <a class="wa" id="wa-done" href="#" target="_blank" rel="noopener">Envoyer aussi sur WhatsApp</a>
+          <button type="button" class="sub2" id="done-again">Modifier ma demande</button>
+        </div>
+      </div>
+      <!-- FORM-END -->
+    </div>
+  </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div style="background:#100904;color:#e3d0b6">
+    <div class="secf" style="max-width:1240px;margin:0 auto;padding:64px 24px 32px;box-sizing:border-box;display:flex;flex-direction:column;gap:48px">
+      <div style="display:flex;flex-wrap:wrap;gap:40px 56px;justify-content:space-between">
+        <div style="flex:1 1 280px;min-width:0;display:flex;flex-direction:column;gap:14px;max-width:360px">
+          <div style="display:flex;align-items:center;gap:12px">
+            <svg width="30" height="30" viewBox="0 0 34 34" aria-hidden="true"><rect x="4" y="19" width="6" height="11" fill="#EE9822"/><rect x="14" y="12" width="6" height="18" fill="#EE9822"/><rect x="24" y="4" width="6" height="26" fill="#EE9822"/></svg>
+            <span style="font-family:'Libre Baskerville',Georgia,serif;font-size:20px;font-weight:700;color:#ffedd7">Benjamin EGAH</span>
+          </div>
+          <p style="margin:0;font-size:15px;line-height:1.6">Consultant SEO. Je vous aide à être trouvé sur Google par vos clients, où qu’ils soient.</p>
+        </div>
+        <div style="flex:0 1 200px;min-width:0;display:flex;flex-direction:column;gap:10px;font-size:15px">
+          <div style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#ffedd7;font-weight:600;padding-bottom:4px">Services</div>
+          <a class="fl" href="#services" style="text-decoration:none;color:#e3d0b6">Audit SEO</a>
+          <a class="fl" href="#services" style="text-decoration:none;color:#e3d0b6">SEO local et Google Maps</a>
+          <a class="fl" href="#services" style="text-decoration:none;color:#e3d0b6">Contenu et mots-clés</a>
+          <a class="fl" href="#services" style="text-decoration:none;color:#e3d0b6">SEO technique</a>
+        </div>
+        <div style="flex:0 1 260px;min-width:0;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.5">
+          <div style="font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#ffedd7;font-weight:600;padding-bottom:4px">Contact</div>
+          <span>Basé à Lomé, Togo</span>
+          <a href="https://wa.me/27783871119" target="_blank" rel="noopener" class="fl" style="text-decoration:none;color:#e3d0b6">+27 78 387 1119</a>
+          <a href="mailto:j7881863@gami.com" class="fl" style="text-decoration:none;color:#e3d0b6">j7881863@gami.com</a>
+          <span>Lun – Ven, 8h – 18h</span>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;padding-top:24px;border-top:1px solid #40372e;font-size:14px;color:#b9a58b">
+        <span>© 2026 Benjamin EGAH. Tous droits réservés.</span>
+        <span>Mentions légales · Politique de confidentialité</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="mbsp" aria-hidden="true"></div>
+</div>
+<script>
+(function(){
+  var st={off:0,date:'',time:''};
+  var BOOKED=[];
+  function cal(off,date,time){
+  const MONTHS=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+  const DAYS=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+  const TIMES=['09:00','09:30','10:00','10:30','11:00','11:30','14:00','14:30','15:00','15:30','16:00','16:30','17:00','17:30'];
+  const TAKEN=(typeof BOOKED!=='undefined'&&BOOKED)||[];
+  const mins=(t)=>parseInt(t.slice(0,2),10)*60+parseInt(t.slice(3),10);
+  const endOf=(t)=>pad(Math.floor((mins(t)+30)/60))+':'+pad((mins(t)+30)%60);
+  const pad=(n)=>String(n).padStart(2,'0');
+  const iso=(d)=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+  /* Créneaux affichés en heure de Lomé (GMT+0, sans heure d’été) :
+     on lit donc l’instant en UTC, jamais l’horloge locale du visiteur. */
+  const now=new Date();
+  const lY=now.getUTCFullYear(), lM=now.getUTCMonth(), lD=now.getUTCDate();
+  const nowMin=now.getUTCHours()*60+now.getUTCMinutes();
+  const today=new Date(lY,lM,lD);
+  const maxD=new Date(today.getFullYear(),today.getMonth(),today.getDate()+90);
+  const first=new Date(today.getFullYear(),today.getMonth()+off,1);
+  const y=first.getFullYear(), m=first.getMonth();
+  const lead=(first.getDay()+6)%7;
+  const dim=new Date(y,m+1,0).getDate();
+  const cells=[];
+  for(let i=0;i<lead;i++){cells.push({key:'b'+i,label:'',cls:'day blank',disabled:true,selected:false,id:'',aria:''});}
+  for(let d=1;d<=dim;d++){
+    const dt=new Date(y,m,d), wk=dt.getDay(), id=iso(dt), sel=date===id;
+    const disabled=dt<today||dt>maxD||wk===0||wk===6;
+    cells.push({key:id,label:String(d),cls:'day'+(sel?' sel':'')+(dt.getTime()===today.getTime()?' today':''),disabled:disabled,selected:sel,id:id,aria:DAYS[wk]+' '+d+' '+MONTHS[m]+' '+y});
+  }
+  const isToday=date===iso(today);
+  const slots=TIMES.map(function(t){
+    const past=isToday&&mins(t)<=nowMin+60;
+    const taken=TAKEN.indexOf(date+' '+t)>=0;
+    const sel=time===t;
+    return {key:t,label:t,cls:'slot'+(sel?' sel':''),disabled:!date||past||taken,selected:sel};
+  });
+  let summary='';
+  if(date){
+    const p=date.split('-');
+    const dt=new Date(+p[0],+p[1]-1,+p[2]);
+    summary=DAYS[dt.getDay()]+' '+dt.getDate()+' '+MONTHS[dt.getMonth()]+(time?' de '+time+' à '+endOf(time):'');
+  }
+  return {today:iso(today),monthLabel:MONTHS[m]+' '+y,cells:cells,slots:slots,summary:summary,canPrev:off>0,canNext:new Date(y,m+1,1)<=maxD};
+}
+  var $=function(id){return document.getElementById(id);};
+  function render(){
+    var keep=document.activeElement&&document.activeElement.getAttribute?document.activeElement.getAttribute('data-k'):null;
+    var c=cal(st.off,st.date,st.time);
+    $('cal-m').textContent=c.monthLabel;
+    $('cal-prev').disabled=!c.canPrev;
+    $('cal-next').disabled=!c.canNext;
+    var g=$('cal-days'); g.textContent='';
+    c.cells.forEach(function(x){
+      var b=document.createElement('button');
+      b.type='button'; b.className=x.cls; b.textContent=x.label; b.disabled=x.disabled;
+      if(x.aria){b.setAttribute('aria-label',x.aria);}
+      b.setAttribute('aria-pressed',x.selected?'true':'false');
+      if(x.id){b.setAttribute('data-k','d'+x.id); b.addEventListener('click',function(){st.date=x.id;st.time='';$('f-err').textContent='';render();});}
+      g.appendChild(b);
+    });
+    var sl=$('cal-slots'); sl.textContent='';
+    c.slots.forEach(function(x){
+      var b=document.createElement('button');
+      b.type='button'; b.className=x.cls; b.textContent=x.label; b.disabled=x.disabled;
+      b.setAttribute('aria-pressed',x.selected?'true':'false');
+      b.setAttribute('data-k','t'+x.label);
+      b.addEventListener('click',function(){st.time=x.label;$('f-err').textContent='';render();});
+      sl.appendChild(b);
+    });
+    var ready=!!(st.date&&st.time);
+    $('pick').textContent=ready?('Créneau choisi : '+c.summary):'Aucun créneau choisi pour l’instant.';
+    $('f-date').value=st.date; $('f-heure').value=st.time; $('f-creneau').value=ready?c.summary:'';
+    if(keep){var el=document.querySelector('[data-k="'+keep+'"]'); if(el&&!el.disabled){el.focus();}}
+  }
+  function waLink(){
+    var v=function(id){return $(id).value.trim();};
+    var L=['Bonjour, je souhaite un rendez-vous pour un audit SEO.'];
+    var sm=cal(st.off,st.date,st.time).summary; if(sm){L.push('Créneau : '+sm);}
+    if(v('f-name')){L.push('Nom : '+v('f-name'));}
+    L.push('Besoin : '+$('f-need').value);
+    if(v('f-phone')){L.push('Téléphone : '+v('f-phone'));}
+    if(v('f-email')){L.push('E-mail : '+v('f-email'));}
+    if(v('f-site')){L.push('Site : '+v('f-site'));}
+    if(v('f-msg')){L.push('Message : '+v('f-msg'));}
+    return 'https://wa.me/27783871119?text='+encodeURIComponent(L.join('\n'));
+  }
+  function mine(){try{var o=JSON.parse(localStorage.getItem('rdv_booked')||'null');if(o&&o.date>=cal(0,'','').today){return o;}}catch(e){}return null;}
+  fetch('booked.json',{cache:'no-store'}).then(function(r){return r.ok?r.json():[];}).then(function(a){if(Array.isArray(a)&&a.length){BOOKED=a;render();}}).catch(function(){});
+  $('cal-prev').addEventListener('click',function(){st.off=Math.max(0,st.off-1);render();});
+  $('cal-next').addEventListener('click',function(){st.off=st.off+1;render();});
+  var form=$('rdv-form');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ready=!!(st.date&&st.time), name=$('f-name').value.trim(), mail=$('f-email').value.trim(), err='';
+    if(!ready){err='Choisissez un jour et un horaire.';}
+    else if(!name){err='Indiquez votre nom.';}
+    else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)){err='Indiquez une adresse e-mail valide.';}
+    if(!err&&BOOKED.indexOf(st.date+' '+st.time)>=0){err='Ce créneau vient d’être pris. Choisissez-en un autre.';st.time='';render();}
+    var prev=mine();
+    if(!err&&prev){err='Vous avez déjà un rendez-vous de 30 minutes : '+prev.label+'. Pour le modifier, écrivez-moi sur WhatsApp.';$('wa-fallback').href=waLink();$('wa-fallback').hidden=false;}
+    $('f-err').textContent=err;
+    if(err){return;}
+    var btn=$('f-sub'); btn.disabled=true; btn.textContent='Envoi en cours…';
+    $('wa-fallback').hidden=true;
+    $('f-subject').value='Rendez-vous SEO : '+name+' – '+cal(st.off,st.date,st.time).summary;
+    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(form)).toString()})
+      .then(function(r){
+        if(!r.ok){throw new Error('http '+r.status);}
+        $('done-t').textContent='Merci '+name.split(/\s+/)[0]+' !';
+        $('done-p').textContent='Créneau choisi : '+cal(st.off,st.date,st.time).summary+'. Votre rendez-vous dure 30 minutes. Je reviens vers vous très vite pour le confirmer.';
+        try{localStorage.setItem('rdv_booked',JSON.stringify({date:st.date,time:st.time,label:cal(st.off,st.date,st.time).summary}));}catch(e){}
+        $('wa-done').href=waLink();
+        $('rdv-wrap').hidden=true; $('rdv-done').hidden=false;
+        btn.disabled=false; btn.textContent='Confirmer ma demande';
+      })
+      .catch(function(){
+        $('f-err').textContent='L’envoi a échoué. Confirmez votre demande directement sur WhatsApp.';
+        $('wa-fallback').href=waLink(); $('wa-fallback').hidden=false;
+        btn.disabled=false; btn.textContent='Confirmer ma demande';
+      });
+  });
+  $('done-again').addEventListener('click',function(){$('rdv-done').hidden=true;$('rdv-wrap').hidden=false;});
+  render();
+})();
+</script>
+</body>
+</html>
