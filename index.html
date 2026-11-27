@@ -676,7 +676,7 @@ textarea.inp{resize:vertical;min-height:84px}
         <div style="display:flex;flex-direction:column;gap:28px">
           <p style="margin:0;font-size:17px;line-height:1.7;color:#4A4A4A;max-width:38em">Choisissez un jour et une heure pour votre rendez-vous de 30 minutes, puis contactez-moi.</p>
 
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px">
             <div style="display:flex;flex-direction:column;gap:8px">
               <label for="creneau-date" style="font-size:14px;font-weight:600;color:#000000">Jour</label>
               <input type="date" id="creneau-date" style="padding:12px;border:1px solid #CFCBC3;border-radius:3px;font-size:16px;font-family:inherit" min="" />
