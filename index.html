@@ -836,26 +836,20 @@ textarea.inp{resize:vertical;min-height:84px}
       sl.appendChild(b);
     });
     var ready=!!(st.date&&st.time);
-    var lang=window.i18nLang?window.i18nLang():’fr’;
-    var T=window.i18nT||{};
-    function t(k){return (T[k]&&T[k][lang])||’’;}
-    $(‘pick’).textContent=ready?(t(‘slot-chosen’)+c.summary):t(‘pick-empty’);
+    $(‘pick’).textContent=ready?(‘Créneau choisi : ‘+c.summary):’Aucun créneau choisi pour l\’instant.’;
     $('f-date').value=st.date; $('f-heure').value=st.time; $('f-creneau').value=ready?c.summary:'';
     if(keep){var el=document.querySelector('[data-k="'+keep+'"]'); if(el&&!el.disabled){el.focus();}}
   }
   function waLink(){
-    var lang=window.i18nLang?window.i18nLang():'fr';
-    var T=window.i18nT||{};
-    function t(k){return (T[k]&&T[k][lang])||'';}
     var v=function(id){return $(id).value.trim();};
-    var L=[t('wa-hello')];
-    var sm=cal(st.off,st.date,st.time).summary; if(sm){L.push(t('wa-slot')+sm);}
-    if(v('f-name')){L.push(t('wa-name')+v('f-name'));}
-    L.push(t('wa-need')+$('f-need').value);
-    if(v('f-phone')){L.push(t('wa-phone')+v('f-phone'));}
-    if(v('f-email')){L.push(t('wa-email')+v('f-email'));}
-    if(v('f-site')){L.push(t('wa-site')+v('f-site'));}
-    if(v('f-msg')){L.push(t('wa-msg')+v('f-msg'));}
+    var L=['Bonjour Benjamin, je souhaite réserver un rendez-vous.'];
+    var sm=cal(st.off,st.date,st.time).summary; if(sm){L.push('Créneau souhaité : '+sm);}
+    if(v('f-name')){L.push('Nom : '+v('f-name'));}
+    L.push('Besoin : '+$('f-need').value);
+    if(v('f-phone')){L.push('Téléphone : '+v('f-phone'));}
+    if(v('f-email')){L.push('Email : '+v('f-email'));}
+    if(v('f-site')){L.push('Site : '+v('f-site'));}
+    if(v('f-msg')){L.push('Message : '+v('f-msg'));}
     return 'https://wa.me/27783871119?text='+encodeURIComponent(L.join('\n'));
   }
   function mine(){try{var o=JSON.parse(localStorage.getItem('rdv_booked')||'null');if(o&&o.date>=cal(0,'','').today){return o;}}catch(e){}return null;}
@@ -863,37 +857,34 @@ textarea.inp{resize:vertical;min-height:84px}
   $('cal-prev').addEventListener('click',function(){st.off=Math.max(0,st.off-1);render();});
   $('cal-next').addEventListener('click',function(){st.off=st.off+1;render();});
   var form=$('rdv-form');
-  form.addEventListener('submit',function(e){
+  form.addEventListener(‘submit’,function(e){
     e.preventDefault();
     var ready=!!(st.date&&st.time), name=$(‘f-name’).value.trim(), mail=$(‘f-email’).value.trim(), err=’’;
-    var lang=window.i18nLang?window.i18nLang():’fr’;
-    var T=window.i18nT||{};
-    function t(k){return (T[k]&&T[k][lang])||’’;}
-    if(!ready){err=t(‘err-no-slot’);}
-    else if(!name){err=t(‘err-no-name’);}
-    else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)){err=t(‘err-bad-email’);}
-    if(!err&&BOOKED.indexOf(st.date+’ ‘+st.time)>=0){err=t(‘err-slot-taken’);st.time=’’;render();}
+    if(!ready){err=’Veuillez choisir un créneau.’;}
+    else if(!name){err=’Veuillez indiquer votre nom.’;}
+    else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)){err=’Adresse e-mail invalide.’;}
+    if(!err&&BOOKED.indexOf(st.date+’ ‘+st.time)>=0){err=’Ce créneau vient d\’être pris. Choisissez-en un autre.’;st.time=’’;render();}
     var prev=mine();
-    if(!err&&prev){err=t(‘err-already-booked’)+prev.label+t(‘err-already-booked-suffix’);$(‘wa-fallback’).href=waLink();$(‘wa-fallback’).hidden=false;}
+    if(!err&&prev){err=’Vous avez déjà réservé le ‘+prev.label+’. Pour modifier, contactez-moi sur WhatsApp.’;$(‘wa-fallback’).href=waLink();$(‘wa-fallback’).hidden=false;}
     $(‘f-err’).textContent=err;
     if(err){return;}
-    var btn=$(‘f-sub’); btn.disabled=true; btn.textContent=t(‘sending’);
+    var btn=$(‘f-sub’); btn.disabled=true; btn.textContent=’Envoi en cours…’;
     $(‘wa-fallback’).hidden=true;
-    $(‘f-subject’).value=t(‘rdv-subject’)+name+’ – ‘+cal(st.off,st.date,st.time).summary;
-    fetch('https://formspree.io/f/xnpdwwll',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(form)).toString()})
+    $(‘f-subject’).value=’Nouveau rendez-vous SEO : ‘+name+’ – ‘+cal(st.off,st.date,st.time).summary;
+    fetch(‘https://formspree.io/f/xnpdwwll’,{method:’POST’,headers:{‘Accept’:’application/json’,’Content-Type’:’application/x-www-form-urlencoded’},body:new URLSearchParams(new FormData(form)).toString()})
       .then(function(r){
-        if(!r.ok){throw new Error('http '+r.status);}
-        $(‘done-t’).textContent=t(‘done-name’)+name.split(/\s+/)[0]+’ !’;
-        $(‘done-p’).textContent=t(‘done-slot’)+cal(st.off,st.date,st.time).summary+t(‘done-body-suffix’);
+        if(!r.ok){throw new Error(‘http ‘+r.status);}
+        $(‘done-t’).textContent=’Merci ‘+name.split(/\s+/)[0]+’ !’;
+        $(‘done-p’).textContent=’Votre demande de rendez-vous pour ‘+cal(st.off,st.date,st.time).summary+’ a bien été envoyée. Je vous confirme le créneau par e-mail ou WhatsApp dans les 24 heures.’;
         try{localStorage.setItem(‘rdv_booked’,JSON.stringify({date:st.date,time:st.time,label:cal(st.off,st.date,st.time).summary}));}catch(e){}
         $(‘wa-done’).href=waLink();
         $(‘rdv-wrap’).hidden=true; $(‘rdv-done’).hidden=false;
-        btn.disabled=false; btn.textContent=t(‘btn-submit’);
+        btn.disabled=false; btn.textContent=’Confirmer ma demande’;
       })
       .catch(function(){
-        $(‘f-err’).textContent=t(‘err-send-failed’);
+        $(‘f-err’).textContent=’Échec d\’envoi. Vérifiez votre connexion et réessayez.’;
         $(‘wa-fallback’).href=waLink(); $(‘wa-fallback’).hidden=false;
-        btn.disabled=false; btn.textContent=t(‘btn-submit’);
+        btn.disabled=false; btn.textContent=’Confirmer ma demande’;
       });
   });
   $('done-again').addEventListener('click',function(){$('rdv-done').hidden=true;$('rdv-wrap').hidden=false;});
