@@ -836,7 +836,7 @@ textarea.inp{resize:vertical;min-height:84px}
       sl.appendChild(b);
     });
     var ready=!!(st.date&&st.time);
-    $(‘pick’).textContent=ready?(‘Créneau choisi : ‘+c.summary):’Aucun créneau choisi pour l\’instant.’;
+    $(‘pick’).textContent=ready?(‘Créneau choisi : ‘+c.summary):"Aucun créneau choisi pour l’instant.";
     $('f-date').value=st.date; $('f-heure').value=st.time; $('f-creneau').value=ready?c.summary:'';
     if(keep){var el=document.querySelector('[data-k="'+keep+'"]'); if(el&&!el.disabled){el.focus();}}
   }
@@ -863,7 +863,7 @@ textarea.inp{resize:vertical;min-height:84px}
     if(!ready){err=’Veuillez choisir un créneau.’;}
     else if(!name){err=’Veuillez indiquer votre nom.’;}
     else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)){err=’Adresse e-mail invalide.’;}
-    if(!err&&BOOKED.indexOf(st.date+’ ‘+st.time)>=0){err=’Ce créneau vient d\’être pris. Choisissez-en un autre.’;st.time=’’;render();}
+    if(!err&&BOOKED.indexOf(st.date+’ ‘+st.time)>=0){err="Ce créneau vient d’être pris. Choisissez-en un autre.";st.time=’’;render();}
     var prev=mine();
     if(!err&&prev){err=’Vous avez déjà réservé le ‘+prev.label+’. Pour modifier, contactez-moi sur WhatsApp.’;$(‘wa-fallback’).href=waLink();$(‘wa-fallback’).hidden=false;}
     $(‘f-err’).textContent=err;
@@ -882,7 +882,7 @@ textarea.inp{resize:vertical;min-height:84px}
         btn.disabled=false; btn.textContent=’Confirmer ma demande’;
       })
       .catch(function(){
-        $(‘f-err’).textContent=’Échec d\’envoi. Vérifiez votre connexion et réessayez.’;
+        $(‘f-err’).textContent="Échec d’envoi. Vérifiez votre connexion et réessayez.";
         $(‘wa-fallback’).href=waLink(); $(‘wa-fallback’).hidden=false;
         btn.disabled=false; btn.textContent=’Confirmer ma demande’;
       });
