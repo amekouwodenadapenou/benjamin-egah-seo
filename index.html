@@ -701,6 +701,18 @@ textarea.inp{resize:vertical;min-height:84px}
             </div>
           </div>
 
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <label for="creneau-service" style="font-size:14px;font-weight:600;color:#000000">Service souhaité</label>
+            <select id="creneau-service" style="padding:12px;border:1px solid #CFCBC3;border-radius:3px;font-size:16px;font-family:inherit">
+              <option value="">-- Sélectionner un service --</option>
+              <option value="Audit SEO complet">Audit SEO complet</option>
+              <option value="SEO local et Google Maps">SEO local et Google Maps</option>
+              <option value="Contenu et mots-clés">Contenu et mots-clés</option>
+              <option value="SEO technique et mobile">SEO technique et mobile</option>
+              <option value="Autre">Autre</option>
+            </select>
+          </div>
+
           <div style="display:flex;flex-wrap:wrap;gap:16px">
             <a id="btn-whatsapp" href="https://wa.me/27783871119?text=Bonjour%20Benjamin%2C%20je%20souhaite%20r%C3%A9server%20un%20audit%20SEO%20gratuit." target="_blank" rel="noopener" class="btn" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;background:#25D366;color:#000000;padding:16px 28px;font-weight:700;font-size:16px;border-radius:3px;cursor:pointer">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.882a.75.75 0 00.918.919l6.085-1.464A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.004-1.368l-.36-.213-3.714.894.912-3.63-.234-.375A9.818 9.818 0 1112 21.818z"/></svg>
@@ -726,6 +738,7 @@ textarea.inp{resize:vertical;min-height:84px}
         (function() {
           const dateInput = document.getElementById('creneau-date');
           const heureSelect = document.getElementById('creneau-heure');
+          const serviceSelect = document.getElementById('creneau-service');
           const btnWhatsApp = document.getElementById('btn-whatsapp');
           const btnEmail = document.getElementById('btn-email');
 
@@ -737,8 +750,9 @@ textarea.inp{resize:vertical;min-height:84px}
           function updateLinks() {
             const date = dateInput.value;
             const heure = heureSelect.value;
+            const service = serviceSelect.value;
 
-            if (date && heure) {
+            if (date && heure && service) {
               const dateObj = new Date(date + 'T00:00:00');
               const jours = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
               const mois = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
@@ -747,18 +761,19 @@ textarea.inp{resize:vertical;min-height:84px}
               const mois_nom = mois[dateObj.getMonth()];
 
               const dateFormatted = jour + ' ' + jour_num + ' ' + mois_nom + ' à ' + heure;
-              const textCreneau = encodeURIComponent('Créneau souhaité : ' + dateFormatted);
+              const textCreneau = encodeURIComponent('Créneau souhaité : ' + dateFormatted + '\nService : ' + service);
 
-              const waMsg = 'Bonjour%20Benjamin%2C%20je%20souhaite%20r%C3%A9server%20un%20audit%20SEO%20gratuit.%0A' + textCreneau;
+              const waMsg = 'Bonjour%20Benjamin%2C%20je%20souhaite%20r%C3%A9server%20un%20rendez-vous.%0A' + textCreneau;
               btnWhatsApp.href = 'https://wa.me/27783871119?text=' + waMsg;
 
-              const emailBody = encodeURIComponent('Bonjour Benjamin,\n\nJe souhaite réserver un rendez-vous de 30 minutes pour un audit SEO gratuit.\n\nCréneau souhaité : ' + dateFormatted + '\n\nMon site : \nMon besoin : \n\nCordialement');
-              btnEmail.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=j7881863@gami.com&su=Demande%20d%27audit%20SEO%20gratuit&body=' + emailBody;
+              const emailBody = encodeURIComponent('Bonjour Benjamin,\n\nJe souhaite réserver un rendez-vous de 30 minutes.\n\nCréneau souhaité : ' + dateFormatted + '\nService : ' + service + '\n\nMon site : \nCommentaires supplémentaires : \n\nCordialement');
+              btnEmail.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=j7881863@gami.com&su=Demande%20de%20rendez-vous%20SEO&body=' + emailBody;
             }
           }
 
           dateInput.addEventListener('change', updateLinks);
           heureSelect.addEventListener('change', updateLinks);
+          serviceSelect.addEventListener('change', updateLinks);
         })();
       </script>
     </div>
