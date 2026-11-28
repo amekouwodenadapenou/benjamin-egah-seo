@@ -320,9 +320,11 @@ function applyLang(lang) {
   currentLang = lang;
   localStorage.setItem('benco-lang', lang);
 
-  // Bouton de langue
+  // Bouton de langue (nav + fixe mobile)
   const btn = document.getElementById('lang-btn');
   if (btn) btn.textContent = lang === 'fr' ? 'EN' : 'FR';
+  const btnFixed = document.getElementById('lang-fixed');
+  if (btnFixed) btnFixed.textContent = lang === 'fr' ? 'EN' : 'FR';
 
   // Attribut lang de la page
   document.documentElement.lang = lang;
