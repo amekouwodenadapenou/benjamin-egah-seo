@@ -4,6 +4,12 @@
 
 const I18N = {
   fr: {
+    /* ---- BANDEROLE ---- */
+    'banner-txt1': 'Audit SEO gratuit de votre site, sans engagement.',
+    'banner-txt2': 'Rendez-vous de 30 minutes, sans engagement.',
+    'banner-cta': 'Réserver mon créneau',
+    'mbar-cta': 'Réserver un créneau',
+
     /* ---- PAGE ---- */
     'title': 'EGAH Benjamin, consultant SEO',
     'meta-desc': 'Benco, consultant SEO : audit, SEO local, contenu et suivi pour apparaître en premier sur Google.',
@@ -157,6 +163,12 @@ const I18N = {
     /* ---- PAGE ---- */
     'title': 'EGAH Benjamin, SEO Consultant',
     'meta-desc': 'Benco, SEO consultant: audit, local SEO, content and follow-up to rank first on Google.',
+
+    /* ---- BANDEROLE ---- */
+    'banner-txt1': 'Free SEO audit of your site, no commitment.',
+    'banner-txt2': '30-minute appointment, no commitment.',
+    'banner-cta': 'Book my slot',
+    'mbar-cta': 'Book a slot',
 
     /* ---- NAV ---- */
     'nav-services': 'Services',
