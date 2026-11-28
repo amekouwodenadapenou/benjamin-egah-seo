@@ -35,6 +35,9 @@ const I18N = {
     'mockup-traffic': 'Trafic Google',
     'mockup-days': '30 jours',
     'mockup-visits': 'visites depuis la recherche',
+    'mockup-phone-title': 'Votre entreprise',
+    'mockup-phone-call': 'Appeler',
+    'mockup-phone-wa': 'WhatsApp',
 
     /* ---- STATS ---- */
     'stats-label': 'Chiffres clés',
@@ -180,13 +183,20 @@ const I18N = {
     'mockup-traffic': 'Google Traffic',
     'mockup-days': '30 days',
     'mockup-visits': 'visits from search',
+    'mockup-phone-title': 'Your business',
+    'mockup-phone-call': 'Call',
+    'mockup-phone-wa': 'WhatsApp',
 
     /* ---- STATS ---- */
     'stats-label': 'Key Figures',
     'stats-h2': 'Concrete results, measured every month.',
+    'stat1-num': '2 years',
     'stat1-label': 'of experience in SEO and website creation',
+    'stat2-num': '5',
     'stat2-label': 'businesses and organizations supported so far',
+    'stat3-num': '+25%',
     'stat3-label': 'organic traffic on average after 6 months',
+    'stat4-num': '1.5×',
     'stat4-label': 'more calls and WhatsApp messages with an optimized Google listing',
 
     /* ---- SERVICES ---- */
@@ -217,7 +227,7 @@ const I18N = {
     /* ---- À PROPOS ---- */
     'apropos-label': 'About',
     'apropos-h2': 'A consultant who listens.',
-    'apropos-p1': 'My name is EGAH Benjamin, SEO consultant. I work with SMEs, hotels, clinics, schools, online stores and organizations that want to be found by their customers, locally and internationally.',
+    'apropos-p1': 'My name is EGAH Benjamin, SEO consultant. I work with SMEs (Small and Medium-sized Enterprises), hotels, clinics, schools, online stores and organizations that want to be found by their customers, locally and internationally.',
     'apropos-p2': 'I know your realities: customers searching from their phone, WhatsApp conversations, competition often played out on Google Maps. Every strategy starts there.',
     'apropos-check1': '<strong>Total transparency.</strong> You know what I do, why and with what results.',
     'apropos-check2': '<strong>Mobile first.</strong> Your site is designed first for the phone screen.',

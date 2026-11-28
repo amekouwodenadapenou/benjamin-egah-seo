@@ -79,6 +79,12 @@ details summary{transition:padding-left .3s ease}
 details summary:hover{padding-left:6px}
 details::details-content{block-size:0;overflow:hidden;transition:block-size .45s cubic-bezier(.2,.7,.2,1),content-visibility .45s allow-discrete}
 details[open]::details-content{block-size:auto}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
+
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}
 }
@@ -371,9 +377,9 @@ textarea.inp{resize:vertical;min-height:84px}
                     <span class="ph-pin"><span class="ph-ring"></span><span class="ph-dot"></span></span></div>
                   <div class="ph-nt"></div>
                   <div class="ph-sheet">
-                    <b class="ph-t">Votre entreprise</b>
+                    <b class="ph-t" data-i18n="mockup-phone-title">Votre entreprise</b>
                     <span class="ph-st"><span style="color:#EE9822">★★★★★</span> 4,9</span>
-                    <div class="ph-btn"><span class="ph-call">Appeler</span><span class="ph-wa">WhatsApp</span></div>
+                    <div class="ph-btn"><span class="ph-call" data-i18n="mockup-phone-call">Appeler</span><span class="ph-wa" data-i18n="mockup-phone-wa">WhatsApp</span></div>
                   </div>
                   <div class="hx-gl"></div>
                 </div>
@@ -397,19 +403,19 @@ textarea.inp{resize:vertical;min-height:84px}
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:32px 0">
         <div class="rv d1 st" style="flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:8px;padding:4px 28px 4px 0">
-          <span class="bar" style="width:40px;height:4px;background:#EE9822"></span><div class="bn" style="font-family:’Libre Baskerville’,Georgia,serif;font-size:52px;line-height:1;color:#000000">2 ans</div>
+          <span class="bar" style="width:40px;height:4px;background:#EE9822"></span><div class="bn" style="font-family:’Libre Baskerville’,Georgia,serif;font-size:52px;line-height:1;color:#000000" data-i18n="stat1-num">2 ans</div>
           <div style="font-size:16px;line-height:1.5;color:#4A4A4A" data-i18n="stat1-label">d’expérience en référencement naturel et en création de sites</div>
         </div>
         <div class="rv d2 st" style="flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:8px;padding:4px 28px;border-left:1px solid #E5E2DC">
-          <span class="bar" style="width:40px;height:4px;background:#EE9822"></span><div class="bn" style="font-family:’Libre Baskerville’,Georgia,serif;font-size:52px;line-height:1;color:#000000">5</div>
+          <span class="bar" style="width:40px;height:4px;background:#EE9822"></span><div class="bn" style="font-family:’Libre Baskerville’,Georgia,serif;font-size:52px;line-height:1;color:#000000" data-i18n="stat2-num">5</div>
           <div style="font-size:16px;line-height:1.5;color:#4A4A4A" data-i18n="stat2-label">entreprises et organisations accompagnées jusqu’ici</div>
         </div>
         <div class="rv d3 st" style="flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:8px;padding:4px 28px;border-left:1px solid #E5E2DC">
-          <span class="bar" style="width:40px;height:4px;background:#EE9822"></span><div class="bn" style="font-family:’Libre Baskerville’,Georgia,serif;font-size:52px;line-height:1;color:#000000">+25&nbsp;%</div>
+          <span class="bar" style="width:40px;height:4px;background:#EE9822"></span><div class="bn" style="font-family:’Libre Baskerville’,Georgia,serif;font-size:52px;line-height:1;color:#000000" data-i18n="stat3-num">+25&nbsp;%</div>
           <div style="font-size:16px;line-height:1.5;color:#4A4A4A" data-i18n="stat3-label">de trafic organique en moyenne après 6 mois de collaboration</div>
         </div>
         <div class="rv d4 st" style="flex:1 1 220px;min-width:0;display:flex;flex-direction:column;gap:8px;padding:4px 0 4px 28px;border-left:1px solid #E5E2DC">
-          <span class="bar" style="width:40px;height:4px;background:#EE9822"></span><div class="bn" style="font-family:’Libre Baskerville’,Georgia,serif;font-size:52px;line-height:1;color:#000000">1,5×</div>
+          <span class="bar" style="width:40px;height:4px;background:#EE9822"></span><div class="bn" style="font-family:’Libre Baskerville’,Georgia,serif;font-size:52px;line-height:1;color:#000000" data-i18n="stat4-num">1,5×</div>
           <div style="font-size:16px;line-height:1.5;color:#4A4A4A" data-i18n="stat4-label">plus d’appels et de messages WhatsApp grâce à une fiche Google optimisée</div>
         </div>
       </div>
@@ -666,10 +672,6 @@ textarea.inp{resize:vertical;min-height:84px}
           <h2 style="margin:0;font-family:’Libre Baskerville’,Georgia,serif;font-weight:700;font-size:clamp(34px,5vw,60px);line-height:1.15;color:#000000;text-wrap:balance" data-i18n="contact-h2">Votre site mérite d’être trouvé.</h2>
           <p style="margin:0;font-size:18px;line-height:1.6;color:#000000;max-width:36em" data-i18n="contact-p">Choisissez un jour et un horaire, puis laissez vos coordonnées. Je regarde votre site, votre fiche Google et vos concurrents, puis je vous dis où se trouvent vos meilleures opportunités.</p>
         </div>
-        <div style="flex:0 1 auto;display:flex;flex-direction:column;gap:4px;font-size:16px;font-weight:600;color:#000000">
-          <a href="https://wa.me/27783871119" target="_blank" rel="noopener" style="color:#000000;text-decoration:underline;text-underline-offset:4px" data-i18n="contact-whatsapp-link">WhatsApp : +27 78 387 1119</a>
-          <a href="mailto:j7881863@gami.com" style="color:#000000;text-decoration:underline;text-underline-offset:4px">j7881863@gami.com</a>
-        </div>
       </div>
       <!-- FORM-START -->
       <div class="rv d1 bk" style="background:#ffffff;color:#000000;border-radius:4px;padding:36px;box-sizing:border-box">
@@ -729,7 +731,7 @@ textarea.inp{resize:vertical;min-height:84px}
             </a>
           </div>
 
-          <p style="margin:0;font-size:14px;color:#4A4A4A" data-i18n="contact-gratuit">Gratuit et sans engagement. Je vous réponds sous 24h.</p>
+          <p style="margin:0;font-size:18px;font-weight:700;color:#EE9822;animation:pulse 2s ease-in-out infinite" data-i18n="contact-gratuit">Gratuit et sans engagement. Je vous réponds sous 24h.</p>
         </div>
       </div>
       <!-- FORM-END -->
