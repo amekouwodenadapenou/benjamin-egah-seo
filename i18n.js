@@ -15,6 +15,8 @@ const I18N = {
     'nav-apropos': 'À propos',
     'nav-temoignages': 'Témoignages',
     'nav-cta': 'Audit gratuit',
+    'header-name': 'EGAH Benjamin',
+    'header-title': 'Consultant SEO',
 
     /* ---- HERO ---- */
     'hero-label': 'Consultant SEO',
@@ -163,6 +165,8 @@ const I18N = {
     'nav-apropos': 'About',
     'nav-temoignages': 'Testimonials',
     'nav-cta': 'Free Audit',
+    'header-name': 'Benjamin EGAH',
+    'header-title': 'SEO Consultant',
 
     /* ---- HERO ---- */
     'hero-label': 'SEO Consultant',
