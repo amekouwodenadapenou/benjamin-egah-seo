@@ -1,233 +1,346 @@
-/* ===== Bilinguisme FR / EN ===== */
-(function(){
-  var LANG = localStorage.getItem('lang') || 'fr';
+/* ===================================================
+   Système bilingue FR / EN — bencoseo.com
+   =================================================== */
 
-  var T = {
-    /* Navigation */
-    'nav-services':     { fr: 'Services',   en: 'Services' },
-    'nav-portfolio':    { fr: 'Portfolio',  en: 'Portfolio' },
-    'nav-resultats':    { fr: 'Résultats',  en: 'Results' },
-    'nav-apropos':      { fr: 'À propos',   en: 'About' },
-    'nav-temoignages':  { fr: 'Témoignages',en: 'Testimonials' },
-    'nav-cta':          { fr: 'Audit gratuit', en: 'Free audit' },
-    'nav-reserver':     { fr: 'Réserver un créneau', en: 'Book a slot' },
+const I18N = {
+  fr: {
+    /* ---- PAGE ---- */
+    'title': 'EGAH Benjamin, consultant SEO',
+    'meta-desc': 'Benco, consultant SEO : audit, SEO local, contenu et suivi pour apparaître en premier sur Google.',
 
-    /* Hero */
-    'hero-label':       { fr: 'Consultant SEO', en: 'SEO Consultant' },
-    'hero-h1':          { fr: 'Apparaissez en premier sur <span class="hl" style="color:#EE9822">Google</span>.', en: 'Rank first on <span class="hl" style="color:#EE9822">Google</span>.' },
-    'hero-body':        { fr: "J'aide les entreprises, commerces et organisations à gagner en visibilité sur Google, à attirer des clients qualifiés et à transformer chaque recherche en appel, message WhatsApp ou vente.", en: "I help businesses, shops and organisations gain visibility on Google, attract qualified customers and turn every search into a call, WhatsApp message or sale." },
-    'hero-cta':         { fr: 'Demander un audit gratuit', en: 'Request a free audit' },
-    'hero-card-title':  { fr: 'Benjamin EGAH', en: 'Benjamin EGAH' },
-    'hero-card-sub':    { fr: 'Audit, SEO local, contenu et suivi mensuel.', en: 'Audit, local SEO, content and monthly tracking.' },
+    /* ---- NAV ---- */
+    'nav-services': 'Services',
+    'nav-portfolio': 'Portfolio',
+    'nav-resultats': 'Résultats',
+    'nav-apropos': 'À propos',
+    'nav-temoignages': 'Témoignages',
+    'nav-cta': 'Audit gratuit',
 
-    /* Chiffres clés */
-    'stats-label':      { fr: 'Chiffres clés', en: 'Key figures' },
-    'stats-h2':         { fr: 'Des résultats concrets, mesurés chaque mois.', en: 'Concrete results, measured every month.' },
-    'stat1-num':        { fr: '2 ans', en: '2 years' },
-    'stat1-desc':       { fr: "d'expérience en référencement naturel et en création de sites", en: 'of experience in SEO and website creation' },
-    'stat2-desc':       { fr: "entreprises et organisations accompagnées jusqu'ici", en: 'businesses and organisations supported so far' },
-    'stat3-desc':       { fr: 'de trafic organique en moyenne après 6 mois de collaboration', en: 'average organic traffic growth after 6 months' },
-    'stat4-desc':       { fr: "plus d'appels et de messages WhatsApp grâce à une fiche Google optimisée", en: 'more calls and WhatsApp messages from an optimised Google profile' },
+    /* ---- HERO ---- */
+    'hero-label': 'Consultant SEO',
+    'hero-h1': 'Apparaissez en premier sur <span style="color:#EE9822">Google</span>.',
+    'hero-p': 'J\'aide les entreprises, commerces et organisations à gagner en visibilité sur Google, à attirer des clients qualifiés et à transformer chaque recherche en appel, message WhatsApp ou vente.',
+    'hero-cta': 'Demander un audit gratuit',
+    'hero-card-sub': 'Audit, SEO local, contenu et suivi mensuel.',
 
-    /* Services */
-    'services-label':   { fr: 'Services', en: 'Services' },
-    'services-h2':      { fr: 'Un accompagnement SEO complet.', en: 'Complete SEO support.' },
-    'services-body':    { fr: "Adapté à votre activité et à votre marché. Vos clients cherchent sur leur téléphone, dans leur langue, au moment où ils ont besoin de vous. Je construis votre visibilité autour de ces habitudes.", en: "Tailored to your business and your market. Your customers search on their phones, in their language, when they need you. I build your visibility around those habits." },
-    'svc1-title':       { fr: 'Audit SEO complet', en: 'Full SEO Audit' },
-    'svc1-body':        { fr: "Analyse de votre site, de vos concurrents et de vos mots-clés. Vous recevez un rapport clair avec les priorités à traiter en premier.", en: "Analysis of your site, competitors and keywords. You receive a clear report with the top priorities to address first." },
-    'svc2-title':       { fr: 'SEO local et Google Maps', en: 'Local SEO & Google Maps' },
-    'svc2-body':        { fr: "Optimisation de votre fiche Google Business Profile pour apparaître dans les recherches « près de moi », avec avis, photos et horaires à jour.", en: "Optimising your Google Business Profile to appear in 'near me' searches, with up-to-date reviews, photos and opening hours." },
-    'svc3-title':       { fr: 'Contenu et mots-clés', en: 'Content & Keywords' },
-    'svc3-body':        { fr: "Recherche des mots-clés que tapent vos clients, puis plan éditorial et articles, dans la langue de votre public, qui répondent à leurs vraies questions.", en: "Keyword research based on what your customers type, then an editorial plan and articles in your audience's language that answer their real questions." },
-    'svc4-title':       { fr: 'SEO technique et mobile', en: 'Technical & Mobile SEO' },
-    'svc4-body':        { fr: "Vitesse de chargement sur connexion mobile, structure du site, balises et indexation. Votre site reste rapide même sur une connexion lente.", en: "Loading speed on mobile connections, site structure, tags and indexing. Your site stays fast even on a slow connection." },
-    'svc5-title':       { fr: 'Liens et notoriété locale', en: 'Links & Local Authority' },
-    'svc5-body':        { fr: "Présence dans les annuaires, médias et sites partenaires de votre secteur et de votre région pour renforcer la confiance de Google dans votre site.", en: "Presence in directories, media and partner sites in your sector and region to strengthen Google's trust in your site." },
-    'svc6-title':       { fr: 'Suivi et rapport mensuel', en: 'Monthly Tracking & Report' },
-    'svc6-body':        { fr: "Positions, trafic, appels et messages WhatsApp suivis dans Google Search Console et Analytics. Un point mensuel, sans jargon.", en: "Rankings, traffic, calls and WhatsApp messages tracked in Google Search Console and Analytics. A monthly review, jargon-free." },
+    /* ---- MOCKUP ---- */
+    'mockup-query': 'consultant seo',
+    'mockup-ad1-title': 'Agence web et SEO, devis rapide',
+    'mockup-ad1-desc': 'Création de sites et référencement pour entreprises.',
+    'mockup-ad2-title': 'Annuaire des consultants SEO',
+    'mockup-ad2-desc': 'Comparez les prestataires et leurs tarifs.',
+    'mockup-me-title': 'Consultant SEO, audit gratuit de votre site',
+    'mockup-me-desc': 'Plus de visibilité, plus d\'appels et de messages WhatsApp.',
+    'mockup-badge': 'N°1 sur Google',
+    'mockup-traffic': 'Trafic Google',
+    'mockup-days': '30 jours',
+    'mockup-visits': 'visites depuis la recherche',
 
-    /* Portfolio */
-    'portfolio-label':  { fr: 'Portfolio', en: 'Portfolio' },
-    'portfolio-h2':     { fr: "Des sites que j'ai créés et optimisés.", en: 'Sites I built and optimised.' },
-    'portfolio-body':   { fr: "Chaque projet est pensé pour être rapide, clair et bien placé sur Google. Ouvrez-les et jugez par vous-même.", en: "Every project is designed to be fast, clear and well-ranked on Google. Open them and judge for yourself." },
-    'portfolio-cta':    { fr: 'Parler de mon projet', en: 'Discuss my project' },
-    'portfolio-next':   { fr: 'Votre site pourrait être le prochain de cette liste.', en: 'Your site could be the next on this list.' },
-    'p1-cat':           { fr: 'Boutique en ligne', en: 'Online shop' },
-    'p1-body':          { fr: "Création du site et optimisation des fiches produits pour attirer des acheteurs depuis Google.", en: "Site creation and product listing optimisation to attract buyers from Google." },
-    'p2-cat':           { fr: 'Site vitrine', en: 'Showcase site' },
-    'p2-body':          { fr: "Site d'entreprise rapide et lisible sur mobile, avec une structure pensée pour le référencement.", en: "Fast, mobile-friendly business site with an SEO-first structure." },
-    'p3-cat':           { fr: 'Organisation', en: 'Organisation' },
-    'p3-body':          { fr: "Refonte du site et du contenu pour être trouvé sur les recherches qui comptent pour son public.", en: "Full site and content overhaul to rank for the searches that matter to its audience." },
-    'visit-site':       { fr: 'Visiter le site', en: 'Visit site' },
+    /* ---- STATS ---- */
+    'stats-label': 'Chiffres clés',
+    'stats-h2': 'Des résultats concrets, mesurés chaque mois.',
+    'stat1-label': 'd\'expérience en référencement naturel et en création de sites',
+    'stat2-label': 'entreprises et organisations accompagnées jusqu\'ici',
+    'stat3-label': 'de trafic organique en moyenne après 6 mois de collaboration',
+    'stat4-label': 'plus d\'appels et de messages WhatsApp grâce à une fiche Google optimisée',
 
-    /* À propos */
-    'apropos-label':    { fr: 'À propos', en: 'About' },
-    'apropos-h2':       { fr: 'Un consultant à votre écoute.', en: 'A consultant who listens.' },
-    'apropos-p1':       { fr: "Je m'appelle Benjamin EGAH, consultant SEO et fondateur de Studio Cicatrices d'Or (SCO Academy). Je travaille avec des PME (petites et moyennes entreprises), hôtels, cliniques, écoles, boutiques en ligne et organisations qui veulent être trouvés par leurs clients, au niveau local comme à l'international.", en: "My name is Benjamin EGAH, SEO consultant and founder of Studio Cicatrices d'Or (SCO Academy). I work with SMEs (small and medium-sized enterprises), hotels, clinics, schools, online shops and organisations that want to be found by their customers — locally and internationally." },
-    'apropos-p2':       { fr: "Je connais vos réalités : clients qui cherchent depuis leur téléphone, échanges sur WhatsApp, concurrence qui se joue souvent sur Google Maps. Chaque stratégie part de là.", en: "I know your reality: customers searching on their phones, conversations on WhatsApp, competition that often plays out on Google Maps. Every strategy starts from there." },
-    'apropos-pt':       { fr: '<strong>Transparence totale.</strong> Vous savez ce que je fais, pourquoi et avec quels résultats.', en: '<strong>Full transparency.</strong> You know what I do, why, and with what results.' },
-    'apropos-pm':       { fr: '<strong>Priorité au mobile.</strong> Votre site est pensé d\'abord pour l\'écran du téléphone.', en: '<strong>Mobile first.</strong> Your site is designed for the phone screen first.' },
-    'apropos-pr':       { fr: '<strong>Résultats mesurables.</strong> Positions, appels et ventes suivis chaque mois.', en: '<strong>Measurable results.</strong> Rankings, calls and sales tracked every month.' },
+    /* ---- SERVICES ---- */
+    'services-label': 'Services',
+    'services-h2': 'Un accompagnement SEO complet.',
+    'services-p': 'Adapté à votre activité et à votre marché. Vos clients cherchent sur leur téléphone, dans leur langue, au moment où ils ont besoin de vous. Je construis votre visibilité autour de ces habitudes.',
+    'svc1-title': 'Audit SEO complet',
+    'svc1-desc': 'Analyse de votre site, de vos concurrents et de vos mots-clés. Vous recevez un rapport clair avec les priorités à traiter en premier.',
+    'svc2-title': 'SEO local et Google Maps',
+    'svc2-desc': 'Optimisation de votre fiche Google Business Profile pour apparaître dans les recherches « près de moi », avec avis, photos et horaires à jour.',
+    'svc3-title': 'Contenu et mots-clés',
+    'svc3-desc': 'Recherche des mots-clés que tapent vos clients, puis plan éditorial et articles, dans la langue de votre public, qui répondent à leurs vraies questions.',
+    'svc4-title': 'SEO technique et mobile',
+    'svc4-desc': 'Vitesse de chargement sur connexion mobile, structure du site, balises et indexation. Votre site reste rapide même sur une connexion lente.',
+    'svc5-title': 'Liens et notoriété locale',
+    'svc5-desc': 'Présence dans les annuaires, médias et sites partenaires de votre secteur et de votre région pour renforcer la confiance de Google dans votre site.',
+    'svc6-title': 'Suivi et rapport mensuel',
+    'svc6-desc': 'Positions, trafic, appels et messages WhatsApp suivis dans Google Search Console et Analytics. Un point mensuel, sans jargon.',
 
-    /* Méthode */
-    'methode-label':    { fr: 'Ma méthode', en: 'My method' },
-    'methode-h2':       { fr: 'Quatre étapes, du diagnostic aux résultats.', en: 'Four steps, from diagnosis to results.' },
-    'step1-title':      { fr: 'Diagnostic', en: 'Diagnosis' },
-    'step1-body':       { fr: "J'analyse votre site, vos concurrents et vos mots-clés pour repérer ce qui vous freine et ce qui peut vous rapporter vite.", en: "I analyse your site, competitors and keywords to identify what is holding you back and what can deliver quick wins." },
-    'step2-title':      { fr: 'Stratégie', en: 'Strategy' },
-    'step2-body':       { fr: "Nous fixons ensemble les priorités, les pages à travailler et les objectifs, avec un calendrier simple à suivre.", en: "We set priorities, target pages and goals together, with a simple schedule to follow." },
-    'step3-title':      { fr: 'Mise en œuvre', en: 'Implementation' },
-    'step3-body':       { fr: "Je corrige la technique, optimise vos pages et produis le contenu qui répond aux recherches de vos clients.", en: "I fix technical issues, optimise your pages and produce content that answers your customers' searches." },
-    'step4-title':      { fr: 'Suivi', en: 'Tracking' },
-    'step4-body':       { fr: "Chaque mois, vous recevez un rapport clair : positions, visites, contacts. Nous ajustons selon les résultats.", en: "Every month you receive a clear report: rankings, visits, contacts. We adjust based on the results." },
+    /* ---- PORTFOLIO ---- */
+    'portfolio-label': 'Portfolio',
+    'portfolio-h2': 'Des sites que j\'ai créés et optimisés.',
+    'portfolio-p': 'Chaque projet est pensé pour être rapide, clair et bien placé sur Google. Ouvrez-les et jugez par vous-même.',
+    'portfolio-cta': 'Parler de mon projet',
+    'portfolio-next': 'Votre site pourrait être le prochain de cette liste.',
+    'portfolio-visit': 'Visiter le site',
 
-    /* Témoignages */
-    'temoignages-label':{ fr: 'Témoignages', en: 'Testimonials' },
-    'temoignages-h2':   { fr: 'Ce que disent les entreprises accompagnées.', en: 'What supported businesses say.' },
-    'quote1':           { fr: "« Notre restaurant apparaît maintenant dans les premiers résultats Google Maps de notre ville. Les réservations par WhatsApp ont nettement augmenté dès le troisième mois. »", en: '"Our restaurant now appears in the top Google Maps results for our city. WhatsApp bookings increased noticeably from the third month."' },
-    'quote1-role':      { fr: 'Gérant, restaurant', en: 'Manager, restaurant' },
-    'quote2':           { fr: "« Benjamin a corrigé les lenteurs de notre boutique en ligne et structuré nos fiches produits. Le trafic venu de Google a nettement progressé en six mois. »", en: '"Benjamin fixed our online shop speed issues and structured our product listings. Traffic from Google improved significantly in six months."' },
-    'quote2-role':      { fr: 'Fondatrice, boutique de mode en ligne', en: 'Founder, online fashion boutique' },
-    'quote3':           { fr: "« Des explications simples, un rapport clair chaque mois et un vrai suivi. Notre clinique reçoit plus de demandes de rendez-vous depuis la recherche Google. »", en: '"Simple explanations, a clear monthly report and real follow-up. Our clinic receives more appointment requests from Google search."' },
-    'quote3-role':      { fr: 'Directeur, clinique privée', en: 'Director, private clinic' },
+    /* ---- À PROPOS ---- */
+    'apropos-label': 'À propos',
+    'apropos-h2': 'Un consultant à votre écoute.',
+    'apropos-p1': 'Je m\'appelle EGAH Benjamin, consultant SEO. Je travaille avec des PME (petites et moyennes entreprises), hôtels, cliniques, écoles, boutiques en ligne et organisations qui veulent être trouvés par leurs clients, au niveau local comme à l\'international.',
+    'apropos-p2': 'Je connais vos réalités : clients qui cherchent depuis leur téléphone, échanges sur WhatsApp, concurrence qui se joue souvent sur Google Maps. Chaque stratégie part de là.',
+    'apropos-check1': '<strong>Transparence totale.</strong> Vous savez ce que je fais, pourquoi et avec quels résultats.',
+    'apropos-check2': '<strong>Priorité au mobile.</strong> Votre site est pensé d\'abord pour l\'écran du téléphone.',
+    'apropos-check3': '<strong>Résultats mesurables.</strong> Positions, appels et ventes suivis chaque mois.',
 
-    /* FAQ */
-    'faq-label':        { fr: 'Questions fréquentes', en: 'FAQ' },
-    'faq-h2':           { fr: 'Ce que mes clients me demandent le plus.', en: 'What my clients ask most.' },
-    'faq1-q':           { fr: 'En combien de temps verrai-je des résultats ?', en: 'How long before I see results?' },
-    'faq1-a':           { fr: 'Les premiers effets apparaissent en général entre 3 et 6 mois. Le délai dépend de votre secteur, de la concurrence et de l\'état actuel de votre site.', en: 'First effects usually appear between 3 and 6 months. The timeline depends on your sector, competition and your site\'s current state.' },
-    'faq2-q':           { fr: 'Travaillez-vous à distance ?', en: 'Do you work remotely?' },
-    'faq2-a':           { fr: 'Oui. Nous échangeons par visioconférence, téléphone ou WhatsApp, et je peux accompagner des entreprises dans plusieurs pays.', en: 'Yes. We communicate by video call, phone or WhatsApp, and I can support businesses in multiple countries.' },
-    'faq3-q':           { fr: 'Combien coûte un accompagnement SEO ?', en: 'How much does SEO support cost?' },
-    'faq3-a':           { fr: "Chaque mission est chiffrée après l'audit gratuit, selon la taille de votre site et vos objectifs. Vous recevez un devis clair avant de commencer.", en: 'Every project is priced after the free audit, based on your site size and goals. You receive a clear quote before we start.' },
-    'faq4-q':           { fr: 'Dois-je refaire mon site ?', en: 'Do I need to rebuild my site?' },
-    'faq4-a':           { fr: "Pas forcément. L'audit indique ce qui peut être corrigé sur votre site actuel et ce qui mérite d'être reconstruit.", en: 'Not necessarily. The audit shows what can be fixed on your current site and what is worth rebuilding.' },
-    'faq5-q':           { fr: 'Quelle différence avec la publicité sur Google ?', en: 'What is the difference from Google Ads?' },
-    'faq5-a':           { fr: "La publicité s'arrête dès que vous cessez de payer. Le SEO construit une visibilité durable qui continue d'attirer des visiteurs mois après mois.", en: 'Ads stop the moment you stop paying. SEO builds lasting visibility that keeps attracting visitors month after month.' },
+    /* ---- MÉTHODE ---- */
+    'methode-label': 'Ma méthode',
+    'methode-h2': 'Quatre étapes, du diagnostic aux résultats.',
+    'step1-title': 'Diagnostic',
+    'step1-desc': 'J\'analyse votre site, vos concurrents et vos mots-clés pour repérer ce qui vous freine et ce qui peut vous rapporter vite.',
+    'step2-title': 'Stratégie',
+    'step2-desc': 'Nous fixons ensemble les priorités, les pages à travailler et les objectifs, avec un calendrier simple à suivre.',
+    'step3-title': 'Mise en œuvre',
+    'step3-desc': 'Je corrige la technique, optimise vos pages et produis le contenu qui répond aux recherches de vos clients.',
+    'step4-title': 'Suivi',
+    'step4-desc': 'Chaque mois, vous recevez un rapport clair : positions, visites, contacts. Nous ajustons selon les résultats.',
 
-    /* Contact */
-    'contact-h2':       { fr: 'Votre site mérite d\'être trouvé.', en: 'Your site deserves to be found.' },
-    'contact-body':     { fr: "Choisissez un jour et un horaire, puis laissez vos coordonnées. Je regarde votre site, votre fiche Google et vos concurrents, puis je vous dis où se trouvent vos meilleures opportunités.", en: "Pick a day and time, then leave your details. I look at your site, your Google profile and your competitors, then tell you where your best opportunities lie." },
-    'rdv-step1':        { fr: 'Choisissez un créneau', en: 'Choose a slot' },
-    'rdv-hint':         { fr: 'Rendez-vous de 30 minutes, du lundi au vendredi, réservables jusqu\'à 3 mois à l\'avance. Horaires en heure de Lomé (GMT).', en: '30-minute appointment, Monday to Friday, bookable up to 3 months ahead. Times in Lomé time (GMT).' },
-    'rdv-step2':        { fr: 'Vos coordonnées', en: 'Your details' },
-    'lbl-name':         { fr: 'Nom complet', en: 'Full name' },
-    'lbl-email':        { fr: 'E-mail', en: 'E-mail' },
-    'lbl-phone':        { fr: 'WhatsApp ou téléphone', en: 'WhatsApp or phone' },
-    'lbl-site':         { fr: 'Votre site (facultatif)', en: 'Your site (optional)' },
-    'lbl-need':         { fr: 'Votre besoin', en: 'Your need' },
-    'lbl-msg':          { fr: 'Message (facultatif)', en: 'Message (optional)' },
-    'pick-empty':       { fr: "Aucun créneau choisi pour l'instant.", en: 'No slot chosen yet.' },
-    'btn-wa':           { fr: 'Écrire sur WhatsApp', en: 'Write on WhatsApp' },
-    'btn-submit':       { fr: 'Confirmer ma demande', en: 'Confirm my request' },
-    'free-label':       { fr: 'Gratuit et sans engagement.', en: 'Free and no commitment.' },
-    'done-thanks':      { fr: 'Merci !', en: 'Thank you!' },
-    'btn-wa-done':      { fr: 'Envoyer aussi sur WhatsApp', en: 'Also send on WhatsApp' },
-    'btn-modify':       { fr: 'Modifier ma demande', en: 'Edit my request' },
+    /* ---- TÉMOIGNAGES ---- */
+    'temoignages-label': 'Témoignages',
+    'temoignages-h2': 'Ce que disent les entreprises accompagnées.',
+    'quote1-text': '« Notre restaurant apparaît maintenant dans les premiers résultats Google Maps de notre ville. Les réservations par WhatsApp ont nettement augmenté dès le troisième mois. »',
+    'quote1-role': 'Gérant, restaurant',
+    'quote2-text': '« Benjamin a corrigé les lenteurs de notre boutique en ligne et structuré nos fiches produits. Le trafic venu de Google a nettement progressé en six mois. »',
+    'quote2-role': 'Fondatrice, boutique de mode en ligne',
+    'quote3-text': '« Des explications simples, un rapport clair chaque mois et un vrai suivi. Notre clinique reçoit plus de demandes de rendez-vous depuis la recherche Google. »',
+    'quote3-role': 'Directeur, clinique privée',
 
-    /* Footer */
-    'footer-tagline':   { fr: 'Consultant SEO. Je vous aide à être trouvé sur Google par vos clients, où qu\'ils soient.', en: 'SEO Consultant. I help your customers find you on Google, wherever they are.' },
-    'footer-services':  { fr: 'Services', en: 'Services' },
-    'footer-contact':   { fr: 'Contact', en: 'Contact' },    'footer-location':  { fr: 'Basé à Lomé, Togo', en: 'Based in Lomé, Togo' },
-    'footer-hours':     { fr: 'Lun – Ven, 8h – 18h', en: 'Mon – Fri, 8am – 6pm' },
-    'footer-legal':     { fr: 'Mentions légales · Politique de confidentialité', en: 'Legal notice · Privacy policy' },
-    'footer-copy':      { fr: '© 2026 Benjamin EGAH. Tous droits réservés.', en: '© 2026 Benjamin EGAH. All rights reserved.' },
+    /* ---- FAQ ---- */
+    'faq-label': 'Questions fréquentes',
+    'faq-h2': 'Ce que mes clients me demandent le plus.',
+    'faq1-q': 'En combien de temps verrai-je des résultats ?',
+    'faq1-a': 'Les premiers effets apparaissent en général entre 3 et 6 mois. Le délai dépend de votre secteur, de la concurrence et de l\'état actuel de votre site.',
+    'faq2-q': 'Travaillez-vous à distance ?',
+    'faq2-a': 'Oui. Nous échangeons par visioconférence, téléphone ou WhatsApp, et je peux accompagner des entreprises dans plusieurs pays.',
+    'faq3-q': 'Combien coûte un accompagnement SEO ?',
+    'faq3-a': 'Chaque mission est chiffrée après l\'audit gratuit, selon la taille de votre site et vos objectifs. Vous recevez un devis clair avant de commencer.',
+    'faq4-q': 'Dois-je refaire mon site ?',
+    'faq4-a': 'Pas forcément. L\'audit indique ce qui peut être corrigé sur votre site actuel et ce qui mérite d\'être reconstruit.',
+    'faq5-q': 'Quelle différence avec la publicité sur Google ?',
+    'faq5-a': 'La publicité s\'arrête dès que vous cessez de payer. Le SEO construit une visibilité durable qui continue d\'attirer des visiteurs mois après mois.',
 
-    /* Mobile bar */
-    'mbar-book':        { fr: 'Réserver un créneau', en: 'Book a slot' },
+    /* ---- CONTACT ---- */
+    'contact-h2': 'Votre site mérite d\'être trouvé.',
+    'contact-p': 'Choisissez un jour et un horaire, puis laissez vos coordonnées. Je regarde votre site, votre fiche Google et vos concurrents, puis je vous dis où se trouvent vos meilleures opportunités.',
+    'contact-whatsapp-link': 'WhatsApp : +27 78 387 1119',
+    'contact-form-intro': 'Choisissez un jour et une heure pour votre rendez-vous de 30 minutes, puis contactez-moi.',
+    'contact-label-jour': 'Jour',
+    'contact-label-heure': 'Heure',
+    'contact-label-service': 'Service souhaité',
+    'contact-select-heure': '-- Sélectionner une heure --',
+    'contact-select-service': '-- Sélectionner un service --',
+    'contact-svc1': 'Audit SEO complet',
+    'contact-svc2': 'SEO local et Google Maps',
+    'contact-svc3': 'Contenu et mots-clés',
+    'contact-svc4': 'SEO technique et mobile',
+    'contact-svc5': 'Autre',
+    'contact-autre-ph': 'Précisez votre besoin…',
+    'contact-btn-wa': 'WhatsApp',
+    'contact-btn-email': 'Gmail',
+    'contact-gratuit': 'Gratuit et sans engagement. Je vous réponds sous 24h.',
 
-    /* Banderole */
-    'ticker1':          { fr: 'Audit SEO gratuit de votre site, sans engagement.', en: 'Free SEO audit of your site, no commitment.' },
-    'ticker2':          { fr: 'Rendez-vous de 30 minutes, sans engagement.', en: '30-minute appointment, no commitment.' },
-    'ticker-cta':       { fr: 'Réserver mon créneau', en: 'Book my slot' },
+    /* ---- FOOTER ---- */
+    'footer-tagline': 'Consultant SEO. Je vous aide à être trouvé sur Google par vos clients, où qu\'ils soient.',
+    'footer-svc-title': 'Services',
+    'footer-svc1': 'Audit SEO',
+    'footer-svc2': 'SEO local et Google Maps',
+    'footer-svc3': 'Contenu et mots-clés',
+    'footer-svc4': 'SEO technique et mobile',
+    'footer-contact-title': 'Contact',
+    'footer-location': 'Basé à Lomé, Togo',
+    'footer-hours': 'Lun – Ven, 8h – 18h',
+    'footer-copyright': '© 2026 Benco. Tous droits réservés.',
+    'footer-legal': 'Mentions légales · Politique de confidentialité',
+  },
 
-    'msg-placeholder':  { fr: "Parlez-moi de votre activité et de vos objectifs.", en: "Tell me about your business and your goals." },
+  en: {
+    /* ---- PAGE ---- */
+    'title': 'EGAH Benjamin, SEO Consultant',
+    'meta-desc': 'Benco, SEO consultant: audit, local SEO, content and follow-up to rank first on Google.',
 
-    /* Calendrier JS - textes dynamiques */
-    'slot-chosen':      { fr: 'Créneau choisi : ', en: 'Slot chosen: ' },
-    'sending':          { fr: 'Envoi en cours…', en: 'Sending…' },
-    'done-name':        { fr: 'Merci ', en: 'Thank you ' },
-    'done-slot':        { fr: 'Créneau choisi : ', en: 'Slot chosen: ' },
-    'done-body-suffix': { fr: '. Votre rendez-vous dure 30 minutes. Je reviens vers vous très vite pour le confirmer.', en: '. Your appointment lasts 30 minutes. I will get back to you very soon to confirm it.' },
-    'err-no-slot':      { fr: 'Choisissez un jour et un horaire.', en: 'Please choose a day and time.' },
-    'err-no-name':      { fr: 'Indiquez votre nom.', en: 'Please enter your name.' },
-    'err-bad-email':    { fr: 'Indiquez une adresse e-mail valide.', en: 'Please enter a valid email address.' },
-    'err-slot-taken':   { fr: 'Ce créneau vient d\'être pris. Choisissez-en un autre.', en: 'This slot was just taken. Please choose another one.' },
-    'err-already-booked': { fr: 'Vous avez déjà un rendez-vous de 30 minutes : ', en: 'You already have a 30-minute appointment: ' },
-    'err-already-booked-suffix': { fr: '. Pour le modifier, écrivez-moi sur WhatsApp.', en: '. To change it, write to me on WhatsApp.' },
-    'err-send-failed':  { fr: 'L\'envoi a échoué. Confirmez votre demande directement sur WhatsApp.', en: 'Sending failed. Please confirm your request directly on WhatsApp.' },
-    'wa-hello':         { fr: 'Bonjour, je souhaite un rendez-vous pour un audit SEO.', en: 'Hello, I would like to book an appointment for a free SEO audit.' },
-    'wa-slot':          { fr: 'Créneau : ', en: 'Slot: ' },
-    'wa-name':          { fr: 'Nom : ', en: 'Name: ' },
-    'wa-need':          { fr: 'Besoin : ', en: 'Need: ' },
-    'wa-phone':         { fr: 'Téléphone : ', en: 'Phone: ' },
-    'wa-email':         { fr: 'E-mail : ', en: 'Email: ' },
-    'wa-site':          { fr: 'Site : ', en: 'Site: ' },
-    'wa-msg':           { fr: 'Message : ', en: 'Message: ' },
-    'rdv-subject':      { fr: 'Rendez-vous SEO : ', en: 'SEO Appointment: ' },
+    /* ---- NAV ---- */
+    'nav-services': 'Services',
+    'nav-portfolio': 'Portfolio',
+    'nav-resultats': 'Results',
+    'nav-apropos': 'About',
+    'nav-temoignages': 'Testimonials',
+    'nav-cta': 'Free Audit',
 
-    /* Hero Card - Mockups */
-    'mock-search':      { fr: 'consultant seo', en: 'seo consultant' },
-    'mock-result1-title': { fr: 'Agence web et SEO, devis rapide', en: 'Web & SEO Agency, quick quote' },
-    'mock-result1-desc': { fr: 'Création de sites et référencement pour entreprises.', en: 'Website creation and SEO for businesses.' },
-    'mock-result2-title': { fr: 'Annuaire des consultants SEO', en: 'SEO Consultants Directory' },
-    'mock-result2-desc': { fr: 'Comparez les prestataires et leurs tarifs.', en: 'Compare providers and their rates.' },
-    'mock-result3-title': { fr: 'Consultant SEO, audit gratuit de votre site', en: 'SEO Consultant, free site audit' },
-    'mock-result3-desc': { fr: 'Plus de visibilité, plus d\'appels et de messages WhatsApp.', en: 'More visibility, more calls and WhatsApp messages.' },
-    'mock-rank':        { fr: 'N°1 sur Google', en: '#1 on Google' },
-    'mock-traffic-title': { fr: 'Trafic Google', en: 'Google Traffic' },
-    'mock-traffic-period': { fr: '30 jours', en: '30 days' },
-    'mock-traffic-subtitle': { fr: 'visites depuis la recherche', en: 'visits from search' },
-    'mock-business-name': { fr: 'Votre entreprise', en: 'Your business' },
-    'mock-business-call': { fr: 'Appeler', en: 'Call' },
-    'mock-business-wa': { fr: 'WhatsApp', en: 'WhatsApp' },
-  };
+    /* ---- HERO ---- */
+    'hero-label': 'SEO Consultant',
+    'hero-h1': 'Rank first on <span style="color:#EE9822">Google</span>.',
+    'hero-p': 'I help businesses, shops and organizations gain visibility on Google, attract qualified customers and turn every search into a call, WhatsApp message or sale.',
+    'hero-cta': 'Request a free audit',
+    'hero-card-sub': 'Audit, local SEO, content and monthly follow-up.',
 
-  function apply(lang){
-    LANG = lang;
-    localStorage.setItem('lang', lang);
-    document.querySelectorAll('[data-i18n]').forEach(function(el){
-      var key = el.getAttribute('data-i18n');
-      if(T[key] && T[key][lang] !== undefined){
-        if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA'){
-          el.placeholder = T[key][lang];
-        } else if(el.tagName === 'LABEL'){
-          el.textContent = T[key][lang];
-        } else {
-          el.innerHTML = T[key][lang];
-        }
-      }
-    });
-    /* Gérer les placeholders séparés (data-i18n-placeholder) */
-    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){
-      var key = el.getAttribute('data-i18n-placeholder');
-      if(T[key] && T[key][lang] !== undefined){
-        el.placeholder = T[key][lang];
-      }
-    });
-    /* Mettre à jour les placeholders du calendrier JS */
-    var pick = document.getElementById('pick');
-    if(pick && pick.textContent.trim() && !document.querySelector('[data-k].sel')){
-      pick.textContent = T['pick-empty'][lang];
-    }
-    /* Mettre à jour aria-label du bouton langue */
-    var btn = document.getElementById('lang-btn');
-    if(btn){ btn.textContent = lang === 'fr' ? 'EN' : 'FR'; btn.setAttribute('aria-label', lang === 'fr' ? 'Switch to English' : 'Passer en français'); }
-    /* Mettre à jour html lang */
-    document.documentElement.lang = lang === 'fr' ? 'fr' : 'en';
-    /* Mettre à jour le title */
-    document.title = lang === 'fr' ? 'Benjamin EGAH, consultant SEO' : 'Benjamin EGAH, SEO consultant';
+    /* ---- MOCKUP ---- */
+    'mockup-query': 'seo consultant',
+    'mockup-ad1-title': 'Web agency and SEO, fast quote',
+    'mockup-ad1-desc': 'Website creation and SEO for businesses.',
+    'mockup-ad2-title': 'SEO consultants directory',
+    'mockup-ad2-desc': 'Compare providers and their rates.',
+    'mockup-me-title': 'SEO Consultant, free website audit',
+    'mockup-me-desc': 'More visibility, more calls and WhatsApp messages.',
+    'mockup-badge': '#1 on Google',
+    'mockup-traffic': 'Google Traffic',
+    'mockup-days': '30 days',
+    'mockup-visits': 'visits from search',
+
+    /* ---- STATS ---- */
+    'stats-label': 'Key Figures',
+    'stats-h2': 'Concrete results, measured every month.',
+    'stat1-label': 'of experience in SEO and website creation',
+    'stat2-label': 'businesses and organizations supported so far',
+    'stat3-label': 'organic traffic on average after 6 months',
+    'stat4-label': 'more calls and WhatsApp messages with an optimized Google listing',
+
+    /* ---- SERVICES ---- */
+    'services-label': 'Services',
+    'services-h2': 'Complete SEO support.',
+    'services-p': 'Tailored to your business and market. Your customers search on their phone, in their language, when they need you. I build your visibility around those habits.',
+    'svc1-title': 'Complete SEO Audit',
+    'svc1-desc': 'Analysis of your site, competitors and keywords. You receive a clear report with the top priorities to address first.',
+    'svc2-title': 'Local SEO and Google Maps',
+    'svc2-desc': 'Optimization of your Google Business Profile to appear in "near me" searches, with up-to-date reviews, photos and hours.',
+    'svc3-title': 'Content and Keywords',
+    'svc3-desc': 'Research into keywords your customers type, then an editorial plan and articles in your audience\'s language that answer their real questions.',
+    'svc4-title': 'Technical and Mobile SEO',
+    'svc4-desc': 'Mobile loading speed, site structure, tags and indexing. Your site stays fast even on a slow connection.',
+    'svc5-title': 'Links and Local Authority',
+    'svc5-desc': 'Presence in directories, media and partner sites in your industry and region to strengthen Google\'s trust in your site.',
+    'svc6-title': 'Monthly Tracking and Report',
+    'svc6-desc': 'Rankings, traffic, calls and WhatsApp messages tracked in Google Search Console and Analytics. A monthly update, jargon-free.',
+
+    /* ---- PORTFOLIO ---- */
+    'portfolio-label': 'Portfolio',
+    'portfolio-h2': 'Sites I created and optimized.',
+    'portfolio-p': 'Each project is designed to be fast, clear and well-ranked on Google. Open them and judge for yourself.',
+    'portfolio-cta': 'Talk about my project',
+    'portfolio-next': 'Your site could be the next one on this list.',
+    'portfolio-visit': 'Visit site',
+
+    /* ---- À PROPOS ---- */
+    'apropos-label': 'About',
+    'apropos-h2': 'A consultant who listens.',
+    'apropos-p1': 'My name is EGAH Benjamin, SEO consultant. I work with SMEs, hotels, clinics, schools, online stores and organizations that want to be found by their customers, locally and internationally.',
+    'apropos-p2': 'I know your realities: customers searching from their phone, WhatsApp conversations, competition often played out on Google Maps. Every strategy starts there.',
+    'apropos-check1': '<strong>Total transparency.</strong> You know what I do, why and with what results.',
+    'apropos-check2': '<strong>Mobile first.</strong> Your site is designed first for the phone screen.',
+    'apropos-check3': '<strong>Measurable results.</strong> Rankings, calls and sales tracked monthly.',
+
+    /* ---- MÉTHODE ---- */
+    'methode-label': 'My Method',
+    'methode-h2': 'Four steps, from diagnosis to results.',
+    'step1-title': 'Diagnosis',
+    'step1-desc': 'I analyze your site, competitors and keywords to identify what\'s holding you back and what can pay off quickly.',
+    'step2-title': 'Strategy',
+    'step2-desc': 'Together we set priorities, pages to work on and objectives, with a simple schedule to follow.',
+    'step3-title': 'Implementation',
+    'step3-desc': 'I fix technical issues, optimize your pages and produce content that answers your customers\' searches.',
+    'step4-title': 'Follow-up',
+    'step4-desc': 'Every month you receive a clear report: rankings, visits, contacts. We adjust according to results.',
+
+    /* ---- TÉMOIGNAGES ---- */
+    'temoignages-label': 'Testimonials',
+    'temoignages-h2': 'What supported businesses say.',
+    'quote1-text': '"Our restaurant now appears in the top Google Maps results for our city. WhatsApp bookings increased significantly from the third month."',
+    'quote1-role': 'Manager, restaurant',
+    'quote2-text': '"Benjamin fixed our online store\'s slowness and structured our product listings. Google traffic improved significantly in six months."',
+    'quote2-role': 'Founder, online fashion store',
+    'quote3-text': '"Simple explanations, a clear monthly report and real follow-up. Our clinic receives more appointment requests from Google search."',
+    'quote3-role': 'Director, private clinic',
+
+    /* ---- FAQ ---- */
+    'faq-label': 'FAQ',
+    'faq-h2': 'What my clients ask most.',
+    'faq1-q': 'How long before I see results?',
+    'faq1-a': 'First effects usually appear between 3 and 6 months. The timeframe depends on your industry, competition and your site\'s current state.',
+    'faq2-q': 'Do you work remotely?',
+    'faq2-a': 'Yes. We communicate by video conference, phone or WhatsApp, and I can support businesses in several countries.',
+    'faq3-q': 'How much does SEO support cost?',
+    'faq3-a': 'Each project is priced after the free audit, based on your site size and objectives. You receive a clear quote before starting.',
+    'faq4-q': 'Do I need to rebuild my site?',
+    'faq4-a': 'Not necessarily. The audit indicates what can be fixed on your current site and what deserves to be rebuilt.',
+    'faq5-q': 'What\'s the difference with Google advertising?',
+    'faq5-a': 'Advertising stops as soon as you stop paying. SEO builds lasting visibility that continues to attract visitors month after month.',
+
+    /* ---- CONTACT ---- */
+    'contact-h2': 'Your site deserves to be found.',
+    'contact-p': 'Choose a day and time, then leave your contact details. I look at your site, your Google listing and your competitors, then tell you where your best opportunities are.',
+    'contact-whatsapp-link': 'WhatsApp: +27 78 387 1119',
+    'contact-form-intro': 'Choose a day and time for your 30-minute appointment, then contact me.',
+    'contact-label-jour': 'Day',
+    'contact-label-heure': 'Time',
+    'contact-label-service': 'Desired service',
+    'contact-select-heure': '-- Select a time --',
+    'contact-select-service': '-- Select a service --',
+    'contact-svc1': 'Complete SEO Audit',
+    'contact-svc2': 'Local SEO and Google Maps',
+    'contact-svc3': 'Content and Keywords',
+    'contact-svc4': 'Technical and Mobile SEO',
+    'contact-svc5': 'Other',
+    'contact-autre-ph': 'Specify your need…',
+    'contact-btn-wa': 'WhatsApp',
+    'contact-btn-email': 'Gmail',
+    'contact-gratuit': 'Free and no commitment. I reply within 24h.',
+
+    /* ---- FOOTER ---- */
+    'footer-tagline': 'SEO Consultant. I help you get found on Google by your customers, wherever they are.',
+    'footer-svc-title': 'Services',
+    'footer-svc1': 'SEO Audit',
+    'footer-svc2': 'Local SEO and Google Maps',
+    'footer-svc3': 'Content and Keywords',
+    'footer-svc4': 'Technical and Mobile SEO',
+    'footer-contact-title': 'Contact',
+    'footer-location': 'Based in Lomé, Togo',
+    'footer-hours': 'Mon – Fri, 8am – 6pm',
+    'footer-copyright': '© 2026 Benco. All rights reserved.',
+    'footer-legal': 'Legal Notice · Privacy Policy',
   }
+};
 
-  /* Initialiser au chargement */
-  document.addEventListener('DOMContentLoaded', function(){ apply(LANG); });
+/* ===================================================
+   Moteur de traduction
+   =================================================== */
+let currentLang = localStorage.getItem('benco-lang') || 'fr';
 
-  /* Exposer les traductions et la langue pour le JS du calendrier */
-  window.i18nT = T;
-  window.i18nLang = function(){ return LANG; };
+function applyLang(lang) {
+  const t = I18N[lang];
+  if (!t) return;
+  currentLang = lang;
+  localStorage.setItem('benco-lang', lang);
 
-  /* Exposer pour le bouton */
-  window.toggleLang = function(){
-    apply(LANG === 'fr' ? 'en' : 'fr');
-  };
-})();
+  // Bouton de langue
+  const btn = document.getElementById('lang-btn');
+  if (btn) btn.textContent = lang === 'fr' ? 'EN' : 'FR';
+
+  // Attribut lang de la page
+  document.documentElement.lang = lang;
+
+  // Titre et meta
+  document.title = t['title'] || document.title;
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc && t['meta-desc']) metaDesc.setAttribute('content', t['meta-desc']);
+
+  // Tous les éléments data-i18n
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+
+  // Placeholder data-i18n-ph
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const key = el.getAttribute('data-i18n-ph');
+    if (t[key] !== undefined) el.placeholder = t[key];
+  });
+
+  // Options select data-i18n-val
+  document.querySelectorAll('[data-i18n-val]').forEach(el => {
+    const key = el.getAttribute('data-i18n-val');
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+}
+
+function toggleLang() {
+  applyLang(currentLang === 'fr' ? 'en' : 'fr');
+}
+
+// Appliquer au chargement
+document.addEventListener('DOMContentLoaded', function() {
+  applyLang(currentLang);
+});
