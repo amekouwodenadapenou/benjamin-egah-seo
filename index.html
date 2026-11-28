@@ -788,7 +788,12 @@ textarea.inp{resize:vertical;min-height:84px}
 
             // Validation
             if (!date || !heure || !service) { setEnabled(false); return; }
-            if (service === 'Autre' && !autre) { setEnabled(false); formErr.textContent = 'Veuillez préciser votre service.'; return; }
+            if (service === 'Autre' && !autre) {
+              setEnabled(false);
+              const lang = localStorage.getItem('benco-lang') || 'fr';
+              formErr.textContent = I18N[lang]['contact-error-autre'] || 'Veuillez préciser votre service.';
+              return;
+            }
 
             const serviceLabel = service === 'Autre' ? autre : service;
             const dateObj = new Date(date + 'T00:00:00');

@@ -285,6 +285,7 @@ const I18N = {
     'contact-svc4': 'Technical and Mobile SEO',
     'contact-svc5': 'Other',
     'contact-autre-ph': 'Specify your need…',
+    'contact-error-autre': 'Please specify your service.',
     'contact-btn-wa': 'WhatsApp',
     'contact-btn-email': 'Gmail',
     'contact-gratuit': 'Free and no commitment. I reply within 24h.',
